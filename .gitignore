@@ -5,6 +5,5 @@
 /nbproject
 /card/vendor
 /card/.env
-.env.backup
-.phpunit.result.cache
+
 

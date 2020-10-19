@@ -24,8 +24,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        
-        $this->app->bind('path.card.public', function () {
+
+        $this->app->bind('path.public', function () {
             if ($_SERVER['REQUEST_URI'] == '127.0.0.1') {
                 return base_path() . '/../public_html';
             }

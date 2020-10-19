@@ -49,8 +49,8 @@ return [
                     'public' => 0775,
                     'private' => 0700,
                 ],
+            ],
         ],
-    ],
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

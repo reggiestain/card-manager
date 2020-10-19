@@ -26,9 +26,7 @@ class AppServiceProvider extends ServiceProvider
     {
 
         $this->app->bind('path.public', function () {
-            if ($_SERVER['REQUEST_URI'] == '127.0.0.1') {
-                return base_path() . '/../public_html';
-            }
+            return base_path() . '/../public_html';
         });
 
         view()->composer(['layouts.dashboard', 'layouts.partial.topbar'], function ($view) {

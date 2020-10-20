@@ -154,11 +154,12 @@ class EmployeeController extends Controller
                 'lic_cat' => 'required',
             ]);
 
-            if ($request->has('profile_image')) {
+            if ($ if ($request->has('profile_image')) {
+
                 // Get image file
                 $image = $request->file('profile_image');
                 // Make a image name based on user name and current timestamp
-                $name = $request->input('name') . '' . time();
+                $name = $request->input('firstname') . '' . time();
                 // Define folder path
                 $folder = '/img/profile/';
                 // Make a file path where image will be stored [ folder path + file name + file extension]
@@ -167,6 +168,7 @@ class EmployeeController extends Controller
                 $this->uploadOne($image, $folder, 'public', $name);
                 // Set user profile image path in database to filePath
             }
+
 
             $id = $request->input('institution_id');
 

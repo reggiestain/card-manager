@@ -49,7 +49,7 @@
                                                     </div>
                                                     <div class="stepwizard-step col-xs-3">
                                                         <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-                                                        <p><small>Employer Details</small></p>
+                                                        <p><small>Driving School Details</small></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -286,6 +286,29 @@ unset($__errorArgs, $__bag); ?>
                                                         <h3 class="panel-title">License Details</h3>
                                                     </div>
                                                     <div class="form-group">
+                                                        <label class="control-label">Driver's license number</label>
+                                                        <input type="text" name="app_no" class="form-control <?php $__errorArgs = ['app_no'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" value="<?php echo e($employee->license->app_no); ?>" />
+                                                        <?php $__errorArgs = ['app_no'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong><?php echo e($message); ?></strong>
+                                                        </span>
+                                                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                                    </div>
+                                                    <div class="form-group">
                                                         <label class="control-label">License Category</label>
                                                         <select class="form-control" id="selectCat" name="lic_cat" class="form-control <?php $__errorArgs = ['lic_cat'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -314,7 +337,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label class="control-label">Certificate Number</label>
+                                                        <label class="control-label">C of C / Reference Number</label>
                                                         <input type="text" name="cert_no" class="form-control <?php $__errorArgs = ['cert_no'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -336,29 +359,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label class="control-label">Driver's license number</label>
-                                                        <input type="text" name="app_no" class="form-control <?php $__errorArgs = ['app_no'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>" value="<?php echo e($employee->license->app_no); ?>" />
-                                                        <?php $__errorArgs = ['app_no'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong><?php echo e($message); ?></strong>
-                                                        </span>
-                                                        <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                                    </div>
+
                                                     <div class='form-group'>
                                                         <label class="control-label">License Issue Date</label>
                                                         <div class="form-group">
@@ -423,10 +424,10 @@ unset($__errorArgs, $__bag); ?>
                                                 </div>
                                                 <div class="panel panel-primary setup-content" id="step-3">
                                                     <div class="panel-heading">
-                                                        <h3 class="panel-title">Employer Details</h3>
+                                                        <h3 class="panel-title">Driving School Details</h3>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label class="control-label">Employer Name</label>
+                                                        <label class="control-label">School Name</label>
                                                         <input type="text" name="emp_name" class="form-control <?php $__errorArgs = ['emp_name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -537,4 +538,5 @@ unset($__errorArgs, $__bag); ?>
         </div>
     </main>
     <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\wamp64\www\ID-Management\card\resources\views/employee/edit.blade.php ENDPATH**/ ?>

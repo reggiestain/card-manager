@@ -51,7 +51,7 @@
                                                     </div>
                                                     <div class="stepwizard-step col-xs-3">
                                                         <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-                                                        <p><small>Driving School</small></p>
+                                                        <p><small>Driving School Details</small></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -253,10 +253,10 @@
                                                 </div>
                                                 <div class="panel panel-primary setup-content" id="step-3">
                                                     <div class="panel-heading">
-                                                        <h3 class="panel-title">Employer Details</h3>
+                                                        <h3 class="panel-title">Driving School Details<h3>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label class="control-label">Employer Name</label>
+                                                        <label class="control-label">School Name</label>
                                                         <input type="text" name="emp_name" class="form-control @error('emp_name') is-invalid @enderror" placeholder="Employer name" value="{{ old('emp_name') }}" autocomplete="emp_name" />
                                                         @error('emp_name')
                                                         <span class="invalid-feedback" role="alert">

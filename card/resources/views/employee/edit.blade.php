@@ -51,7 +51,7 @@
                                                     </div>
                                                     <div class="stepwizard-step col-xs-3">
                                                         <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-                                                        <p><small>Employer Details</small></p>
+                                                        <p><small>Driving School Details</small></p>
                                                     </div>
                                                 </div>
                                             </div>

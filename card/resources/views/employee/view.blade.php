@@ -90,21 +90,23 @@
                                                 </tr>
                                                 <tr>
                                                     <td colspan="3">
-                                                        <strong>Certificate Number: </strong> #{{$employee->license->cert_no}}
-                                                        <br><br>
-                                                        <strong>Issued Date: </strong> {{$employee->license->issued_date}}
-                                                        <br><br>
-                                                        <strong>Category :</strong> {{$employee->license->lic_cat}}
-                                                    </td>
-                                                    <td colspan=" 3">
                                                         <strong>Driver's License No: </strong> #{{$employee->license->app_no}}
                                                         <br><br>
-                                                        <strong>Expiry Date: </strong> {{$employee->license->issued_date}}
+                                                        <strong>Category :</strong> {{$employee->license->lic_cat}}
+                                                        <br><br>
+                                                        <strong>C of C / Reference Number: </strong> #{{$employee->license->cert_no}}
+                                                    </td>
+                                                    <td colspan=" 3">
+                                                        <strong>Issue Date: </strong> {{$employee->license->issued_date}}
+                                                        <br><br>
+
+                                                        <strong>Expiry Date: </strong> {{$employee->license->expiry_date}}
+                                                        <br><br>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <th colspan="6">
-                                                        <h4>EMPLOYER DETAILS</h4>
+                                                        <h4>DRIVING SCHOOL DETAILS</h4>
                                                     </th>
                                                     <th></th>
                                                     <th></th>
@@ -116,10 +118,10 @@
                                             <tbody>
                                                 <tr>
 
-                                                    <th colspan="2">Employer Name</th>
+                                                    <th colspan="2">School Name</th>
                                                     <th colspan="2">Contact Person</th>
-                                                    <th colspan="2">Contact Number</th>
                                                     <th colspan="2">Email</th>
+                                                    <th colspan="2">Mobile Number</th>
                                                     <th></th>
                                                     <th></th>
                                                     <th></th>
@@ -130,8 +132,8 @@
                                                 <tr>
                                                     <td colspan="2">{{$employer->emp_name}}</td>
                                                     <td colspan="2">{{$employer->contact_person}}</td>
-                                                    <td colspan="2">{{$employer->contact_number}}</td>
                                                     <td colspan="2">{{$employer->emp_email}}</td>
+                                                    <td colspan="2">{{$employer->contact_number}}</td>
                                                     <td></td>
                                                     <td></td>
                                                     <td></td>

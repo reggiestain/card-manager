@@ -75,7 +75,7 @@
                                                     </td>
                                                     <td colspan="3">
                                                         <?php if($employee->profile_image): ?>
-                                                        <img src="<?php echo e(asset('profile'.$employee->profile_image)); ?>" alt="profile" class="img-thumbnail" width="200" height="200" />
+                                                        <img src="<?php echo e(asset('/card/storage/app/public'.$employee->profile_image)); ?>" alt="profile" class="img-thumbnail" width="200" height="200" />
                                                         <?php else: ?>
 
                                                         <?php endif; ?>

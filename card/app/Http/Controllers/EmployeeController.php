@@ -164,7 +164,7 @@ class EmployeeController extends Controller
                 // Make a file path where image will be stored [ folder path + file name + file extension]
                 $filePath = $folder . $name . '.' . $image->getClientOriginalExtension();
                 // Upload image
-                $this->uploadOne($image, $folder, null, $name);
+                $this->uploadOne($image, $folder, 'public', $name);
                 // Set user profile image path in database to filePath
             }
 

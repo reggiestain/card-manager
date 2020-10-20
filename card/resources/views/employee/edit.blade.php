@@ -137,7 +137,7 @@
                                                                         <div class="row">
                                                                             <div class="col-md-12 imgUp">
                                                                                 <div class="imagePreview" @if ($employee->profile_image)
-                                                                                    style="background-image: url({{public_path('card/storage/app/public'.$employee->profile_image)}})"
+                                                                                    style="background-image: url({{asset('/card/storage/app/public'.$employee->profile_image)}})"
                                                                                     @else
                                                                                     style="background: url(http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg)"
                                                                                     @endif ></div>

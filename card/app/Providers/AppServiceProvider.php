@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('path.public', function () {
 
             if (config('app.url') == 'http://www.mosimalegal.com') {
-                return base_path() . '/../public_html';
+                //return base_path() . '../public_html';
             }
         });
 

@@ -94,7 +94,7 @@
                                                         <br><br>
                                                         <strong>Category :</strong> {{$employee->license->lic_cat}}
                                                         <br><br>
-                                                        <strong>C of C / Reference Number: </strong> {{join('/', str_split($employee->license->cert_no,2)}}
+                                                        <strong>C of C / Reference Number: </strong> {{ join('/', str_split($employee->license->cert_no,2) )}}
                                                     </td>
                                                     <td colspan=" 3">
                                                         <strong>Issue Date: </strong> {{$employee->license->issued_date}}

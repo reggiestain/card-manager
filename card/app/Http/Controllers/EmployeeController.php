@@ -154,7 +154,7 @@ class EmployeeController extends Controller
                 'lic_cat' => 'required',
             ]);
 
-            if ($ if ($request->has('profile_image')) {
+            if ($request->has('profile_image')) {
 
                 // Get image file
                 $image = $request->file('profile_image');

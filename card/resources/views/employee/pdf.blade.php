@@ -33,7 +33,7 @@
                 </td>
                 <td colspan="3">
                     @if ($employee->profile_image)
-                    <img src="{{asset(config('app.file_path').$employee->profile_image)}}" alt="profile" width="200" height="200" />
+                    <img src="{{asset('/card/storage/app/public'.$employee->profile_image)}}" alt="profile" width="100" height="100" />
                     @else
 
                     @endif

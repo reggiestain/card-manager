@@ -14,7 +14,8 @@ use Spipu\Html2Pdf\Html2Pdf;
 use Spipu\Html2Pdf\Exception\Html2PdfException;
 use Spipu\Html2Pdf\Exception\ExceptionFormatter;
 
-class EmployeeController extends Controller {
+class EmployeeController extends Controller
+{
 
     use UploadTrait;
 
@@ -23,16 +24,18 @@ class EmployeeController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id) {
+    public function index($id)
+    {
 
         $employees = Employee::all();
 
-        return view('employee.index')->with(['employees'=>$employees,'id'=>$id]);
+        return view('employee.index')->with(['employees' => $employees, 'id' => $id]);
     }
 
-    public function view($id) {
+    public function view($id)
+    {
 
-        $employee = Employee::where('id',$id)->with(['license','employer'])->get();
+        $employee = Employee::where('id', $id)->with(['license', 'employer'])->get();
 
         $employee = $employee[0];
 
@@ -41,49 +44,54 @@ class EmployeeController extends Controller {
         $genders = ['Male', 'Female'];
 
         return view('employee.view')->with([
-                    'genders' => $genders,
-                    'employee' => $employee,
+            'genders' => $genders,
+            'employee' => $employee,
         ]);
     }
 
-    public function create($id) {
+    public function create($id)
+    {
 
         $genders = ['Male', 'Female'];
 
-        $licCat = ['A','B','C','D','E','F'];
+        $licCat = ['A', 'B', 'C', 'D', 'E', 'F'];
 
         return view('employee.add')->with([
-                    'genders' => $genders,
-                    'id'=>$id,
-                    'licCat'=>$licCat
+            'genders' => $genders,
+            'id' => $id,
+            'licCat' => $licCat
         ]);
     }
 
-    public function edit($id) {
+    public function edit($id)
+    {
 
-        $employee = Employee::with(['institution','license','employer'])->find($id);
+        $employee = Employee::with(['institution', 'license', 'employer'])->find($id);
 
         //$employee = $employee[0];
 
         $genders = ['Male', 'Female'];
 
-        $licCat = ['A','B','C','D','E','F'];
-        
-        return view('employee.edit')->with(['genders' => $genders,
-                                             'employee'=>$employee,
-                                             'licCat'=>$licCat]);
+        $licCat = ['A', 'B', 'C', 'D', 'E', 'F'];
+
+        return view('employee.edit')->with([
+            'genders' => $genders,
+            'employee' => $employee,
+            'licCat' => $licCat
+        ]);
     }
 
-    public function update(Request $request, Employee $employee) {
+    public function update(Request $request, Employee $employee)
+    {
 
         $employee = Employee::find($employee->id);
 
         // Check if a profile image has been uploaded
         $request->validate([
             'name' => 'required',
-                'surname' => 'required',
-                'email' => 'required',
-              
+            'surname' => 'required',
+            'email' => 'required',
+
         ]);
 
         if ($request->has('profile_image')) {
@@ -106,8 +114,8 @@ class EmployeeController extends Controller {
         $employee->surname = $request->input('surname');
         $employee->email = $request->input('email');
         $employee->mobile = $request->input('mobile');
-        $employee->gender = $request->input('gender') ?? 'Male';        
-        $employee->id_number = $request->input('id_number'); 
+        $employee->gender = $request->input('gender') ?? 'Male';
+        $employee->id_number = $request->input('id_number');
 
         $employee->license->cert_no = $request->input('cert_no');
         $employee->license->issued_date = $request->input('issued_date');
@@ -118,14 +126,15 @@ class EmployeeController extends Controller {
         $employee->employer->emp_email = $request->input('issued_date');
         $employee->employer->contact_person = $request->input('contact_person');
         $employee->employer->contact_number = $request->input('contact_number');
-        
+
         $employee->push();
 
-        return \Redirect::route('employee.index', $employee->id )->with('success', 'Success | Record updated successfully.');
+        return \Redirect::route('employee.index', $employee->id)->with('success', 'Success | Record updated successfully.');
     }
 
-    public function store(Request $request) {
-               
+    public function store(Request $request)
+    {
+
         try {
 
             $this->validate($request, [
@@ -133,7 +142,7 @@ class EmployeeController extends Controller {
                 'surname' => 'required',
                 'email' => 'required|email|unique:employees',
                 'gender' => 'required',
-                'mobile' =>'required',
+                'mobile' => 'required',
                 'profile_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
                 'cert_no' => 'required',
                 'issued_date' => 'required',
@@ -155,7 +164,7 @@ class EmployeeController extends Controller {
                 // Make a file path where image will be stored [ folder path + file name + file extension]
                 $filePath = $folder . $name . '.' . $image->getClientOriginalExtension();
                 // Upload image
-                $this->uploadOne($image, $folder, 'public', $name);
+                $this->uploadOne($image, $folder, null, $name);
                 // Set user profile image path in database to filePath
             }
 
@@ -165,22 +174,22 @@ class EmployeeController extends Controller {
                 'cert_no' => $request->input('cert_no'),
                 'issued_date' => $request->input('issued_date'),
                 'expiry_date' => $request->input('expiry_date'),
-                'app_no'=>$request->input('app_no'),
-                'lic_cat'=>$request->input('lic_cat')
+                'app_no' => $request->input('app_no'),
+                'lic_cat' => $request->input('lic_cat')
             ]);
-           
+
             $employees = Employee::create([
-                        'user_id' => Auth::user()->id,
-                        'profile_image' => $filePath ?? '',
-                        'name' => $request->input('name'),
-                        'surname' => $request->input('surname'),
-                        'id_number'=> $request->input('id_number'),
-                        'email' => $request->input('email'),
-                        'mobile' => $request->input('mobile'),
-                        'gender' => $request->input('gender'),
-                        'institution_id' => $request->input('institution_id'),
-                        'license_id' => $license->id,
-                        
+                'user_id' => Auth::user()->id,
+                'profile_image' => $filePath ?? '',
+                'name' => $request->input('name'),
+                'surname' => $request->input('surname'),
+                'id_number' => $request->input('id_number'),
+                'email' => $request->input('email'),
+                'mobile' => $request->input('mobile'),
+                'gender' => $request->input('gender'),
+                'institution_id' => $request->input('institution_id'),
+                'license_id' => $license->id,
+
             ]);
 
             $employer = Employer::create([
@@ -190,34 +199,32 @@ class EmployeeController extends Controller {
                 'contact_number' => $request->input('contact_number'),
                 'employee_id' => $employees->id,
             ]);
-
-           
-
         } catch (ModelNotFoundException $exception) {
             return back()->withError($exception->getMessage())->withInput();
         }
 
-        return \Redirect::route('employee.index', $id )->with('success', 'Success | Record saved successfully.');
+        return \Redirect::route('employee.index', $id)->with('success', 'Success | Record saved successfully.');
     }
 
-    public function pdf($id) {
+    public function pdf($id)
+    {
 
-        $employee = Employee::where('id',$id)->with(['license','employer'])->get();
+        $employee = Employee::where('id', $id)->with(['license', 'employer'])->get();
 
         $employee = $employee[0];
 
         $name = $employee->name . '-' . $employee->surname;
 
         $genders = ['Male', 'Female'];
-    
-        $pdf = PDF::loadView('employee.pdf', [
-       
-                    'employee' => $employee,
-                    'genders' => $genders,
-        ]);
-        
 
-        return $pdf->download($name .'.pdf');
+        $pdf = PDF::loadView('employee.pdf', [
+
+            'employee' => $employee,
+            'genders' => $genders,
+        ]);
+
+
+        return $pdf->download($name . '.pdf');
     }
 
 
@@ -227,8 +234,8 @@ class EmployeeController extends Controller {
      * @param  \App\Farmer  $employee
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Farmer $employee) {
+    public function destroy(Farmer $employee)
+    {
         //
     }
-
 }

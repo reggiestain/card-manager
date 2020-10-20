@@ -213,7 +213,7 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="control-label">C of C / Reference Number</label>
-                                                        <input type="text" name="cert_no" class="form-control @error('cert_no') is-invalid @enderror" value="{{ $employee->license->cert_no }}" />
+                                                        <input type="text" name="cert_no" class="form-control @error('cert_no') is-invalid @enderror" value="{{ join('/', str_split($employee->license->cert_no,2) )}}" />
                                                         @error('cert_no')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>

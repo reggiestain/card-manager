@@ -25,7 +25,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->app->bind('path.public', function () {
-            return base_path() . '../public_html';
+
+            if (config('app.url') == 'http://www.mosimalegal.com') {
+                return base_path() . '../public_html';
+            }
         });
 
         view()->composer(['layouts.dashboard', 'layouts.partial.topbar'], function ($view) {

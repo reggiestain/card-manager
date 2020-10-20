@@ -18,7 +18,7 @@
     <div>
         @yield('content')
     </div>
-    <div class="container">
+    <div>
         <br><br>
         <p></p>
         <p>Instructor Signature:........................................................Signed......................................................</p>

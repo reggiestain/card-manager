@@ -75,7 +75,7 @@
                                                     </td>
                                                     <td colspan="3">
                                                         <?php if($employee->profile_image): ?>
-                                                        <img src="<?php echo e(base_path().'/storage/app/public'.$employee->profile_image); ?>" alt="profile" class="img-thumbnail" width="200" height="200" />
+                                                        <img src="<?php echo e(asset('/card/storage/app/public'.$employee->profile_image)); ?>" alt="profile" class="img-thumbnail" width="200" height="200" />
                                                         <?php else: ?>
 
                                                         <?php endif; ?>
@@ -103,7 +103,7 @@
                                                         <strong>Category :</strong> <?php echo e($employee->license->lic_cat); ?>
 
                                                     </td>
-                                                    <td colspan="3">
+                                                    <td colspan=" 3">
                                                         <strong>Driver's License No: </strong> #<?php echo e($employee->license->app_no); ?>
 
                                                         <br><br>

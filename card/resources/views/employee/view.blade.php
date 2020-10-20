@@ -71,7 +71,7 @@
                                                     </td>
                                                     <td colspan="3">
                                                         @if ($employee->profile_image)
-                                                        <img src="{{asset(base_path().'/storage/app/public'.$employee->profile_image}})" alt="profile" class="img-thumbnail" width="200" height="200" />
+                                                        <img src="{{asset('/card/storage/app/public'.$employee->profile_image)}}" alt="profile" class="img-thumbnail" width="200" height="200" />
                                                         @else
 
                                                         @endif
@@ -96,7 +96,7 @@
                                                         <br><br>
                                                         <strong>Category :</strong> {{$employee->license->lic_cat}}
                                                     </td>
-                                                    <td colspan="3">
+                                                    <td colspan=" 3">
                                                         <strong>Driver's License No: </strong> #{{$employee->license->app_no}}
                                                         <br><br>
                                                         <strong>Expiry Date: </strong> {{$employee->license->issued_date}}

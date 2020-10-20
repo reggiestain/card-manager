@@ -34,11 +34,9 @@
                 <td colspan="3">
                     <br />
                     @if ($employee->profile_image)
-                    <img src="{{base_path().$employee->profile_image}}" alt=" profile" width="200" height="200" />
+                    <img src="{{asset('/img/public'.$employee->profile_image)}}" alt=" profile" width="200" height="200" />
                     @else
-
                     @endif
-
                 </td>
             </tr>
             <tr>

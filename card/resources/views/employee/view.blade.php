@@ -71,7 +71,7 @@
                                                     </td>
                                                     <td colspan="3">
                                                         @if ($employee->profile_image)
-                                                        <img src="{{asset(config('app.file_path').'/'.$employee->profile_image)}}" alt="profile" class="img-thumbnail" width="200" height="200" />
+                                                        <img src="{{asset(config('app.file_path').$employee->profile_image)}}" alt="profile" class="img-thumbnail" width="200" height="200" />
                                                         @else
 
                                                         @endif

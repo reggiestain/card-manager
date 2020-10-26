@@ -13,6 +13,7 @@
                 <th></th>
                 <th></th>
                 <th></th>
+                <th></th>
             </tr>
             <tr>
                 <td colspan="3">
@@ -23,7 +24,7 @@
                     <strong>Email:</strong> {{$employee->email}}
                     <br><br>
                 </td>
-                <td colspan="3">
+                <td colspan="5">
                     <strong>Surname :</strong> {{$employee->surname}}
                     <br><br>
                     <strong>Gender:</strong> {{$employee->gender}}
@@ -31,10 +32,10 @@
                     <strong>TEL :</strong> {{$employee->mobile}}
                     <br><br>
                 </td>
-                <td colspan="3">
+                <td colspan="5">
                     <br />
                     @if ($employee->profile_image)
-                    <img src="{{asset('upload'.$employee->profile_image)}}" alt=" profile" width="200" height="200" />
+                    <img src="{{asset('/card/storage/app/public'.$employee->profile_image)}}" alt=" profile" width="100" height="100" />
                     @else
                     @endif
                 </td>
@@ -48,17 +49,20 @@
                 <th></th>
                 <th></th>
                 <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
                 <br><br>
             </tr>
             <tr>
-                <td colspan="4">
+                <td colspan="5">
                     <strong>Certificate No: </strong> #{{$employee->license->cert_no}}
                     <br><br>
                     <strong>Issued Date: </strong> {{$employee->license->issued_date}}
                     <br><br>
                     <strong>Category :</strong> {{$employee->license->lic_cat}}
                 </td>
-                <td colspan="4">
+                <td colspan="5">
                     <strong>Driver's License No: </strong> #{{$employee->license->app_no}}
                     <br><br>
                     <strong>Expiry Date: </strong> {{$employee->license->issued_date}}
@@ -77,8 +81,20 @@
                 <th></th>
                 <br><br>
             </tr>
+            <tr>
+                <td colspan="5">
+                    <strong>School :</strong> {{$employee->surname}}
+                    <br><br>
+                    <strong>Email :</strong> {{$employee->mobile}}
+                    <br><br>
+                </td>
+                <td colspan="5">
+                    <strong>Contact Person:</strong> {{$employee->gender}}
+                    <br><br>
+                </td>
+            </tr>
         </thead>
-        <tbody>
+        <!--<tbody>
             <tr>
 
                 <th colspan="2">Employer Name</th>
@@ -103,7 +119,7 @@
             </tr>
             @endforeach
 
-        </tbody>
+        </tbody>-->
         <tfoot>
             <tr>
                 <th colspan="10"></th>

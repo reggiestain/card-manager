@@ -100,7 +100,7 @@
                                                         <strong>Category :</strong> <?php echo e($employee->license->lic_cat); ?>
 
                                                         <br><br>
-                                                        <strong>C of C / Reference Number: </strong> #<?php echo e($employee->license->cert_no); ?>
+                                                        <strong>C of C / Reference Number: </strong> <?php echo e(join('/', str_split($employee->license->cert_no,2) )); ?>
 
                                                     </td>
                                                     <td colspan=" 3">

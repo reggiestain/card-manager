@@ -54,10 +54,13 @@ class EmployeeController extends Controller
 
         $genders = ['Male', 'Female'];
 
+        $nations = ['Ghanaian'];
+
         $licCat = ['A', 'B', 'C', 'D', 'E', 'F'];
 
         return view('employee.add')->with([
             'genders' => $genders,
+            'nations' => $nations,
             'id' => $id,
             'licCat' => $licCat
         ]);
@@ -71,11 +74,12 @@ class EmployeeController extends Controller
         //$employee = $employee[0];
 
         $genders = ['Male', 'Female'];
-
+        $nations = ['Ghanaian'];
         $licCat = ['A', 'B', 'C', 'D', 'E', 'F'];
 
         return view('employee.edit')->with([
             'genders' => $genders,
+            'nations' => $nations,
             'employee' => $employee,
             'licCat' => $licCat
         ]);
@@ -116,17 +120,21 @@ class EmployeeController extends Controller
         $employee->mobile = $request->input('mobile');
         $employee->gender = $request->input('gender') ?? 'Male';
         $employee->id_number = $request->input('id_number');
+        $employee->birth_date = $request->input('birth_date');
+        $employee->nationality = $request->input('nationality');
 
         $employee->license->cert_no = $request->input('cert_no');
         $employee->license->issued_date = $request->input('issued_date');
         $employee->license->expiry_date = $request->input('expiry_date');
-        $employee->employer->app_no = $request->input('app_no');
+        $employee->license->reg_date = $request->input('reg_date');
 
+        $employee->employer->app_no = $request->input('app_no');
         $employee->employer->emp_name = $request->input('cert_no');
         $employee->employer->emp_email = $request->input('issued_date');
         $employee->employer->contact_person = $request->input('contact_person');
         $employee->employer->contact_number = $request->input('contact_number');
-
+        $employee->employer->s_start_date = $request->input('s_start_date');
+        $employee->employer->s_end_date = $request->input('s_end_date');
         $employee->push();
 
         return \Redirect::route('employee.index', $employee->id)->with('success', 'Success | Record updated successfully.');
@@ -140,7 +148,7 @@ class EmployeeController extends Controller
             $this->validate($request, [
                 'name' => 'required',
                 'surname' => 'required',
-                'email' => 'required|email|unique:employees',
+                'email' => 'email|unique:employees',
                 'gender' => 'required',
                 'mobile' => 'required',
                 'profile_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
@@ -177,7 +185,8 @@ class EmployeeController extends Controller
                 'issued_date' => $request->input('issued_date'),
                 'expiry_date' => $request->input('expiry_date'),
                 'app_no' => $request->input('app_no'),
-                'lic_cat' => $request->input('lic_cat')
+                'lic_cat' => $request->input('lic_cat'),
+                'reg_date' => $request->input('reg_date'),
             ]);
 
             $employees = Employee::create([
@@ -190,6 +199,8 @@ class EmployeeController extends Controller
                 'mobile' => $request->input('mobile'),
                 'gender' => $request->input('gender'),
                 'institution_id' => $request->input('institution_id'),
+                'birth_date' => $request->input('birth_date'),
+                'nationality' => $request->input('nationality'),
                 'license_id' => $license->id,
 
             ]);
@@ -199,6 +210,8 @@ class EmployeeController extends Controller
                 'contact_person' => $request->input('contact_person'),
                 'emp_email' => $request->input('emp_email'),
                 'contact_number' => $request->input('contact_number'),
+                's_Start_date' => $request->input('s_start_date'),
+                's_end_date' => $request->input('s_end_date'),
                 'employee_id' => $employees->id,
             ]);
         } catch (ModelNotFoundException $exception) {

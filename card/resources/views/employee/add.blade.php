@@ -126,7 +126,41 @@
                                                                     </span>
                                                                     @enderror
                                                                 </div>
+                                                                <div class="row">
+                                                    <div class='form-group col-md-6'>
+                                                        <label class="control-label">Date of birth</label>
+                                                        <div class="form-group">
+                                                            <div class='input-group date' id='datetimepicker4'>
+                                                                <input type='text' name="birth_date" class="form-control @error('s_start_date') is-invalid @enderror" value="{{ old('birth_date') }}" autocomplete="birth_date" />
+                                                                <span class="input-group-addon">
+                                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        @error('birth_date')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
+                                                    <div class='form-group col-md-6'>
 
+                                                        <div class="form-group">
+                                                        <label class="control-label">Nationality</label>
+                                                                    <select class="form-control" id="selectN" name="nationality" class="form-control @error('nationality') is-invalid @enderror" value="{{ old('nationality') }}" autocomplete="nationality">
+                                                                        <option value="Female" disabled selected>Please select nationality</option>
+                                                                        @foreach($nations as $nation)
+                                                                        <option value="{{$nation}}">{{$nation}}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                        </div>
+                                                        @error('nationality')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
+                                                    </div>
                                                                 <button class="btn btn-primary nextBtn" style="float:right" type="button">Next</button>
 
                                                             </div>
@@ -233,7 +267,8 @@
                                                         </span>
                                                         @enderror
                                                     </div>
-                                                    <div class='form-group'>
+                                                    <div class="row">
+                                                    <div class='form-group col-md-6'>
                                                         <label class="control-label">License Expiry Date</label>
                                                         <div class="form-group">
                                                             <div class='input-group date' id='datetimepicker1'>
@@ -249,6 +284,34 @@
                                                         </span>
                                                         @enderror
                                                     </div>
+                                                    <div class='form-group col-md-6'>
+                                                        <label class="control-label">Year of license registration</label>
+                                                        <div class="form-group">
+                                                            <div class='input-group date' id='datetimepicker3'>
+                                                                <input type='text' name="reg_date" class="form-control @error('reg_date') is-invalid @enderror" value="{{ old('reg_date') }}" autocomplete="reg_date" />
+                                                                <span class="input-group-addon">
+                                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        @error('reg_date')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
+                                                    </div>
+                                                    <!--<div class='form-group col-md-12'>
+                                                        <label class="control-label">Upload Instructor Certificate</label>
+                                                        <div class="form-group">
+                                                        <input id="input-b1" name="input-b1" type="file" class="file" data-browse-on-zone-click="true">
+                                                        </div>
+                                                        @error('expiry_date')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>-->
                                                     <button class="btn btn-primary nextBtn" style="float:right" type="button">Next</button>
                                                 </div>
                                                 <div class="panel panel-primary setup-content" id="step-3">
@@ -290,6 +353,40 @@
                                                             <strong>{{ $message }}</strong>
                                                         </span>
                                                         @enderror
+                                                    </div>
+                                                    <div class="row">
+                                                    <div class='form-group col-md-6'>
+                                                        <label class="control-label">School Start Date</label>
+                                                        <div class="form-group">
+                                                            <div class='input-group date' id='datetimepicker6'>
+                                                                <input type='text' name="s_start_date" class="form-control @error('s_start_date') is-invalid @enderror" value="{{ old('s_start_date') }}" autocomplete="s_start_date" />
+                                                                <span class="input-group-addon">
+                                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        @error('s_start_date')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
+                                                    <div class='form-group col-md-6'>
+                                                        <label class="control-label">School End Date</label>
+                                                        <div class="form-group">
+                                                            <div class='input-group date' id='datetimepicker5'>
+                                                                <input type='text' name="s_end_date" class="form-control @error('s_end_date') is-invalid @enderror" value="{{ old('s_end_date') }}" autocomplete="s_end_date" />
+                                                                <span class="input-group-addon">
+                                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        @error('s_end_date')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
                                                     </div>
                                                     <div class='form-group'>
                                                         <button type="submit" class="btn btn-success float-right">Submit</button>

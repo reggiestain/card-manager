@@ -9,6 +9,7 @@
     <meta name="author" content="" />
     <title>Dashboard - Card Management</title>
     <link href="<?php echo e(asset('css/styles.css')); ?>" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.2/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
     <style>
@@ -257,6 +258,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="<?php echo e(asset('js/scripts.js')); ?>"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+    <!-- the main fileinput plugin file -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.2/js/fileinput.min.js"></script>
+<!-- optionally if you need a theme like font awesome theme you can include it as mentioned below -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.2/themes/fa/theme.js"></script>
+<!-- optionally if you need translation for your language then include  locale file as mentioned below -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.1.2/js/locales/(lang).js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
     <script src="<?php echo e(asset('js/assets/demo/chart-area-demo.js')); ?>"></script>
     <script src="<?php echo e(asset('js/assets/demo/chart-bar-demo.js')); ?>"></script>
@@ -265,6 +272,8 @@
     <script src="<?php echo e(asset('js/assets/demo/datatables-demo.js')); ?>"></script>
     <script>
         $(document).ready(function() {
+
+            $("#input-b1").fileinput();
 
             $(document).on('click', '.add-farm', function() {
                 $("#addFarmModal").modal();
@@ -370,6 +379,32 @@
                 autoclose: true,
                 todayHighlight: true
             });
+            $('#datetimepicker3').datepicker({
+                format: "dd/mm/yyyy",
+                language: "es",
+                autoclose: true,
+                todayHighlight: true
+            });
+
+            $('#datetimepicker4').datepicker({
+                format: "dd/mm/yyyy",
+                language: "es",
+                autoclose: true,
+                todayHighlight: true
+            });
+
+            $('#datetimepicker5').datepicker({
+                format: "dd/mm/yyyy",
+                language: "es",
+                autoclose: true,
+                todayHighlight: true
+            });
+            $('#datetimepicker6').datepicker({
+                format: "dd/mm/yyyy",
+                language: "es",
+                autoclose: true,
+                todayHighlight: true
+            });
 
             $('#date-year').datepicker({
                 format: "yyyy",
@@ -382,6 +417,16 @@
             });
 
             $('#date-year-2').datepicker({
+                format: "yyyy",
+                weekStart: 1,
+                orientation: "bottom",
+                language: "es",
+                keyboardNavigation: false,
+                viewMode: "years",
+                minViewMode: "years"
+            });
+
+            $('#date-year-3').datepicker({
                 format: "yyyy",
                 weekStart: 1,
                 orientation: "bottom",

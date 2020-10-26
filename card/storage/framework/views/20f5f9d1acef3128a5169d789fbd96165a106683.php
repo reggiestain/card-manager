@@ -12,6 +12,7 @@
                 <th></th>
                 <th></th>
                 <th></th>
+                <th></th>
             </tr>
             <tr>
                 <td colspan="3">
@@ -25,7 +26,7 @@
 
                     <br><br>
                 </td>
-                <td colspan="3">
+                <td colspan="5">
                     <strong>Surname :</strong> <?php echo e($employee->surname); ?>
 
                     <br><br>
@@ -36,15 +37,12 @@
 
                     <br><br>
                 </td>
-                <td colspan="3">
+                <td colspan="5">
                     <br />
                     <?php if($employee->profile_image): ?>
-
-                    <img src="<?php echo e(asset('/card/storage/app/public'.$employee->profile_image)); ?>" alt=" profile" width="200" height="200" />
+                    <img src="<?php echo e(asset('/card/storage/app/public'.$employee->profile_image)); ?>" alt=" profile" width="100" height="100" />
                     <?php else: ?>
-
                     <?php endif; ?>
-
                 </td>
             </tr>
             <tr>
@@ -56,10 +54,13 @@
                 <th></th>
                 <th></th>
                 <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
                 <br><br>
             </tr>
             <tr>
-                <td colspan="4">
+                <td colspan="5">
                     <strong>Certificate No: </strong> #<?php echo e($employee->license->cert_no); ?>
 
                     <br><br>
@@ -69,7 +70,7 @@
                     <strong>Category :</strong> <?php echo e($employee->license->lic_cat); ?>
 
                 </td>
-                <td colspan="4">
+                <td colspan="5">
                     <strong>Driver's License No: </strong> #<?php echo e($employee->license->app_no); ?>
 
                     <br><br>
@@ -90,8 +91,23 @@
                 <th></th>
                 <br><br>
             </tr>
+            <tr>
+                <td colspan="5">
+                    <strong>School :</strong> <?php echo e($employee->surname); ?>
+
+                    <br><br>
+                    <strong>Email :</strong> <?php echo e($employee->mobile); ?>
+
+                    <br><br>
+                </td>
+                <td colspan="5">
+                    <strong>Contact Person:</strong> <?php echo e($employee->gender); ?>
+
+                    <br><br>
+                </td>
+            </tr>
         </thead>
-        <tbody>
+        <!--<tbody>
             <tr>
 
                 <th colspan="2">Employer Name</th>
@@ -116,7 +132,7 @@
             </tr>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-        </tbody>
+        </tbody>-->
         <tfoot>
             <tr>
                 <th colspan="10"></th>
@@ -134,4 +150,5 @@
 </div>
 
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.pdf', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\wamp64\www\ID-Management\card\resources\views/employee/pdf.blade.php ENDPATH**/ ?>

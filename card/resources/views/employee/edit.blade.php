@@ -150,7 +150,7 @@
                                                         <option value="{{$employee->nationality}}" disabled selected>{{$employee->nationality}}</option>
                                                                         <option value="Female" disabled selected>Please select nationality</option>
                                                                         @foreach($nations as $nation)
-                                                                        <option value="{{$gender}}">{{$nation}}</option>
+                                                                        <option value="{{$nation}}">{{$nation}}</option>
                                                                         @endforeach
                                                                     </select>
                                                         </div>
@@ -363,7 +363,7 @@
                                                         <label class="control-label">School Start Date</label>
                                                         <div class="form-group">
                                                             <div class='input-group date' id='datetimepicker6'>
-                                                                <input type='text' name="s_start_date" class="form-control @error('s_start_date') is-invalid @enderror" value="{{ $employee->employer[0]->s_start_date }}" autocomplete="s_start_date" />
+                                                                <input type='text' name="s_start_date" class="form-control @error('s_start_date') is-invalid @enderror" value="{{ $employee->employer[0]->s_start_date }}"/>
                                                                 <span class="input-group-addon">
                                                                     <span class="glyphicon glyphicon-calendar"></span>
                                                                 </span>
@@ -379,7 +379,7 @@
                                                         <label class="control-label">School End Date</label>
                                                         <div class="form-group">
                                                             <div class='input-group date' id='datetimepicker5'>
-                                                                <input type='text' name="s_end_date" class="form-control @error('s_end_date') is-invalid @enderror" value="{{ $employee->employer[0]->s_end_date }}" autocomplete="s_end_date" />
+                                                                <input type='text' name="s_end_date" class="form-control @error('s_end_date') is-invalid @enderror" value="{{ $employee->employer[0]->s_end_date }}" />
                                                                 <span class="input-group-addon">
                                                                     <span class="glyphicon glyphicon-calendar"></span>
                                                                 </span>

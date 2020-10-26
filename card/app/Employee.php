@@ -12,7 +12,7 @@ class Employee extends Model {
      * @var array
      */
     protected $fillable = ['id','institution_id','license_id','name','surname','email', 'gender','mobile',
-                           'id_number','user_id','profile_image'];
+                           'id_number','user_id','profile_image','nationality','birth_date'];
 
     public function user() {
 
@@ -30,7 +30,7 @@ class Employee extends Model {
     }
 
     public function employer() {
-        
+
         return $this->hasMany(Employer::class);
     }
 

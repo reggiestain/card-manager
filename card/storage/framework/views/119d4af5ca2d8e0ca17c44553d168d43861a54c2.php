@@ -242,7 +242,7 @@ unset($__errorArgs, $__bag); ?>
                                                     </div>
                                                     <div class='form-group col-md-6'>
                                                         <div class="form-group">
-                                                        <label class="control-label">Nationality</label>
+                                                        <label class="control-label">Nationalty</label>
                                                         <select class="form-control" id="selectN" name="nationality" class="form-control <?php $__errorArgs = ['nationality'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -251,10 +251,9 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>">
-                                                        <option value="<?php echo e($employee->nationality); ?>" disabled selected><?php echo e($employee->nationality); ?></option>
-                                                                        <option value="Female" disabled selected>Please select nationality</option>
+                                                            <option value="<?php echo e($employee->nationality); ?>" disabled selected><?php echo e($employee->nationality ?? 'Select Nationality'); ?></option>
                                                                         <?php $__currentLoopData = $nations; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $nation): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                                        <option value="<?php echo e($gender); ?>"><?php echo e($nation); ?></option>
+                                                                        <option value="<?php echo e($nation); ?>"><?php echo e($nation); ?></option>
                                                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                                     </select>
                                                         </div>
@@ -386,7 +385,7 @@ unset($__errorArgs, $__bag); ?>">
                                                             <option value="<?php echo e($cat); ?>"><?php echo e($cat); ?></option>
                                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                         </select>
-                                                        <?php $__errorArgs = ['gender'];
+                                                        <?php $__errorArgs = ['lic_cat'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -635,20 +634,20 @@ unset($__errorArgs, $__bag); ?>
                                                         <label class="control-label">School Start Date</label>
                                                         <div class="form-group">
                                                             <div class='input-group date' id='datetimepicker6'>
-                                                                <input type='text' name="s_start_date" class="form-control <?php $__errorArgs = ['s_start_date'];
+                                                                <input type='text' name="start_date" class="form-control <?php $__errorArgs = ['start_date'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" value="<?php echo e($employee->employer[0]->s_start_date); ?>" autocomplete="s_start_date" />
+unset($__errorArgs, $__bag); ?>" value="<?php echo e($employee->employer[0]->start_date); ?>"/>
                                                                 <span class="input-group-addon">
                                                                     <span class="glyphicon glyphicon-calendar"></span>
                                                                 </span>
                                                             </div>
                                                         </div>
-                                                        <?php $__errorArgs = ['s_start_date'];
+                                                        <?php $__errorArgs = ['start_date'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -665,20 +664,20 @@ unset($__errorArgs, $__bag); ?>
                                                         <label class="control-label">School End Date</label>
                                                         <div class="form-group">
                                                             <div class='input-group date' id='datetimepicker5'>
-                                                                <input type='text' name="s_end_date" class="form-control <?php $__errorArgs = ['s_end_date'];
+                                                                <input type='text' name="end_date" class="form-control <?php $__errorArgs = ['end_date'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" value="<?php echo e($employee->employer[0]->s_end_date); ?>" autocomplete="s_end_date" />
+unset($__errorArgs, $__bag); ?>" value="<?php echo e($employee->employer[0]->end_date); ?>" />
                                                                 <span class="input-group-addon">
                                                                     <span class="glyphicon glyphicon-calendar"></span>
                                                                 </span>
                                                             </div>
                                                         </div>
-                                                        <?php $__errorArgs = ['s_end_date'];
+                                                        <?php $__errorArgs = ['end_date'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }

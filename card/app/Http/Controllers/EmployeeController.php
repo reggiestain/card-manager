@@ -95,6 +95,7 @@ class EmployeeController extends Controller
             'name' => 'required',
             'surname' => 'required',
             'email' => 'required',
+            'end_date' => 'required',
 
         ]);
 
@@ -121,20 +122,19 @@ class EmployeeController extends Controller
         $employee->gender = $request->input('gender') ?? 'Male';
         $employee->id_number = $request->input('id_number');
         $employee->birth_date = $request->input('birth_date');
-        $employee->nationality = $request->input('nationality');
+        $employee->nationality = $request->input('nationality') ?? 'Ghanaian';
 
         $employee->license->cert_no = $request->input('cert_no');
         $employee->license->issued_date = $request->input('issued_date');
         $employee->license->expiry_date = $request->input('expiry_date');
         $employee->license->reg_date = $request->input('reg_date');
-
         $employee->employer->app_no = $request->input('app_no');
         $employee->employer->emp_name = $request->input('cert_no');
         $employee->employer->emp_email = $request->input('issued_date');
         $employee->employer->contact_person = $request->input('contact_person');
         $employee->employer->contact_number = $request->input('contact_number');
-        $employee->employer->s_start_date = $request->input('s_start_date');
-        $employee->employer->s_end_date = $request->input('s_end_date');
+        $employee->employer->start_date = $request->input('strt_date');
+        $employee->employer->end_date = $request->input('end_date');
         $employee->push();
 
         return \Redirect::route('employee.index', $employee->id)->with('success', 'Success | Record updated successfully.');
@@ -210,8 +210,8 @@ class EmployeeController extends Controller
                 'contact_person' => $request->input('contact_person'),
                 'emp_email' => $request->input('emp_email'),
                 'contact_number' => $request->input('contact_number'),
-                's_Start_date' => $request->input('s_start_date'),
-                's_end_date' => $request->input('s_end_date'),
+                'start_date' => $request->input('start_date'),
+                'end_date' => $request->input('end_date'),
                 'employee_id' => $employees->id,
             ]);
         } catch (ModelNotFoundException $exception) {

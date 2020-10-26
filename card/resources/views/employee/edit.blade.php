@@ -362,13 +362,13 @@
                                                         <label class="control-label">School Start Date</label>
                                                         <div class="form-group">
                                                             <div class='input-group date' id='datetimepicker6'>
-                                                                <input type='text' name="start_date" class="form-control @error('start_date') is-invalid @enderror" value="{{ $employee->employer[0]->start_date }}"/>
+                                                                <input type='text' name="s_start_date" class="form-control @error('s_start_date') is-invalid @enderror" value="{{ $employee->employer[0]->s_start_date }}"/>
                                                                 <span class="input-group-addon">
                                                                     <span class="glyphicon glyphicon-calendar"></span>
                                                                 </span>
                                                             </div>
                                                         </div>
-                                                        @error('start_date')
+                                                        @error('s_start_date')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
                                                         </span>
@@ -378,13 +378,13 @@
                                                         <label class="control-label">School End Date</label>
                                                         <div class="form-group">
                                                             <div class='input-group date' id='datetimepicker5'>
-                                                                <input type='text' name="end_date" class="form-control @error('end_date') is-invalid @enderror" value="{{ $employee->employer[0]->end_date }}" />
+                                                                <input type='text' name="s_end_date" class="form-control @error('s_end_date') is-invalid @enderror" value="{{ $employee->employer[0]->s_end_date }}" />
                                                                 <span class="input-group-addon">
                                                                     <span class="glyphicon glyphicon-calendar"></span>
                                                                 </span>
                                                             </div>
                                                         </div>
-                                                        @error('end_date')
+                                                        @error('s_end_date')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
                                                         </span>

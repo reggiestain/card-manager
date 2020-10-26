@@ -634,20 +634,20 @@ unset($__errorArgs, $__bag); ?>
                                                         <label class="control-label">School Start Date</label>
                                                         <div class="form-group">
                                                             <div class='input-group date' id='datetimepicker6'>
-                                                                <input type='text' name="start_date" class="form-control <?php $__errorArgs = ['start_date'];
+                                                                <input type='text' name="s_start_date" class="form-control <?php $__errorArgs = ['s_start_date'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" value="<?php echo e($employee->employer[0]->start_date); ?>"/>
+unset($__errorArgs, $__bag); ?>" value="<?php echo e($employee->employer[0]->s_start_date); ?>"/>
                                                                 <span class="input-group-addon">
                                                                     <span class="glyphicon glyphicon-calendar"></span>
                                                                 </span>
                                                             </div>
                                                         </div>
-                                                        <?php $__errorArgs = ['start_date'];
+                                                        <?php $__errorArgs = ['s_start_date'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -664,20 +664,20 @@ unset($__errorArgs, $__bag); ?>
                                                         <label class="control-label">School End Date</label>
                                                         <div class="form-group">
                                                             <div class='input-group date' id='datetimepicker5'>
-                                                                <input type='text' name="end_date" class="form-control <?php $__errorArgs = ['end_date'];
+                                                                <input type='text' name="s_end_date" class="form-control <?php $__errorArgs = ['s_end_date'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>" value="<?php echo e($employee->employer[0]->end_date); ?>" />
+unset($__errorArgs, $__bag); ?>" value="<?php echo e($employee->employer[0]->s_end_date); ?>" />
                                                                 <span class="input-group-addon">
                                                                     <span class="glyphicon glyphicon-calendar"></span>
                                                                 </span>
                                                             </div>
                                                         </div>
-                                                        <?php $__errorArgs = ['end_date'];
+                                                        <?php $__errorArgs = ['s_end_date'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }

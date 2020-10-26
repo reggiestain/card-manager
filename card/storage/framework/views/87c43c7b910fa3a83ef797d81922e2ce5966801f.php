@@ -61,6 +61,9 @@
                                                         <strong>Email:</strong> <?php echo e($employee->email); ?>
 
                                                         <br><br>
+                                                        <strong>Date of birth:</strong> <?php echo e($employee->birth_date); ?>
+
+                                                        <br><br>
                                                     </td>
                                                     <td colspan="3">
                                                         <strong>Surname :</strong> <?php echo e($employee->surname); ?>
@@ -70,6 +73,9 @@
 
                                                         <br><br>
                                                         <strong>TEL :</strong> <?php echo e($employee->mobile); ?>
+
+                                                        <br><br>
+                                                        <strong>Nationality :</strong> <?php echo e($employee->nationality); ?>
 
                                                         <br><br>
                                                     </td>
@@ -93,7 +99,7 @@
                                                     <th></th>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="3">
+                                                    <td colspan="4">
                                                         <strong>Driver's License No: </strong> #<?php echo e($employee->license->app_no); ?>
 
                                                         <br><br>
@@ -103,12 +109,14 @@
                                                         <strong>C of C / Reference Number: </strong> <?php echo e(join('/', str_split($employee->license->cert_no,2) )); ?>
 
                                                     </td>
-                                                    <td colspan=" 3">
+                                                    <td colspan="4">
                                                         <strong>Issue Date: </strong> <?php echo e($employee->license->issued_date); ?>
 
                                                         <br><br>
-
                                                         <strong>Expiry Date: </strong> <?php echo e($employee->license->expiry_date); ?>
+
+                                                        <br><br>
+                                                        <strong>Year of license registration: </strong> <?php echo e($employee->license->reg_date); ?>
 
                                                         <br><br>
                                                     </td>
@@ -131,6 +139,8 @@
                                                     <th colspan="2">Contact Person</th>
                                                     <th colspan="2">Email</th>
                                                     <th colspan="2">Mobile Number</th>
+                                                    <th colspan="2">Start Date</th>
+                                                    <th colspan="2">End Date</th>
                                                     <th></th>
                                                     <th></th>
                                                     <th></th>
@@ -143,6 +153,8 @@
                                                     <td colspan="2"><?php echo e($employer->contact_person); ?></td>
                                                     <td colspan="2"><?php echo e($employer->emp_email); ?></td>
                                                     <td colspan="2"><?php echo e($employer->contact_number); ?></td>
+                                                    <td colspan="2"><?php echo e($employer->s_start_date); ?></td>
+                                                    <td colspan="2"><?php echo e($employer->s_end_date); ?></td>
                                                     <td></td>
                                                     <td></td>
                                                     <td></td>

@@ -285,7 +285,7 @@
                                                         @enderror
                                                     </div>
                                                     <div class='form-group col-md-6'>
-                                                        <label class="control-label">Year of license registration</label>
+                                                        <label class="control-label">Year of certification</label>
                                                         <div class="form-group">
                                                             <div class='input-group date' id='datetimepicker3'>
                                                                 <input type='text' name="reg_date" class="form-control @error('reg_date') is-invalid @enderror" value="{{ old('reg_date') }}" autocomplete="reg_date" />

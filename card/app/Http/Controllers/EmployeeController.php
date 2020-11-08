@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Employee;
 use App\License;
 use App\Employer;
+use App\LicenseCertificates;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
@@ -13,10 +14,10 @@ use PDF;
 use Spipu\Html2Pdf\Html2Pdf;
 use Spipu\Html2Pdf\Exception\Html2PdfException;
 use Spipu\Html2Pdf\Exception\ExceptionFormatter;
+use \FileUploader;
 
 class EmployeeController extends Controller
 {
-
     use UploadTrait;
 
     /**
@@ -26,7 +27,6 @@ class EmployeeController extends Controller
      */
     public function index($id)
     {
-
         $employees = Employee::all();
 
         return view('employee.index')->with(['employees' => $employees, 'id' => $id]);
@@ -34,7 +34,6 @@ class EmployeeController extends Controller
 
     public function view($id)
     {
-
         $employee = Employee::where('id', $id)->with(['license', 'employer'])->get();
 
         $employee = $employee[0];
@@ -51,7 +50,6 @@ class EmployeeController extends Controller
 
     public function create($id)
     {
-
         $genders = ['Male', 'Female'];
 
         $nations = ['Ghanaian'];
@@ -68,7 +66,6 @@ class EmployeeController extends Controller
 
     public function edit($id)
     {
-
         $employee = Employee::with(['institution', 'license', 'employer'])->find($id);
 
         //$employee = $employee[0];
@@ -87,7 +84,6 @@ class EmployeeController extends Controller
 
     public function update(Request $request, Employee $employee)
     {
-
         $employee = Employee::find($employee->id);
 
         // Check if a profile image has been uploaded
@@ -97,6 +93,45 @@ class EmployeeController extends Controller
             'email' => 'required',
 
         ]);
+
+        if ($request->has('files')) {
+            // initialize FileUploader
+            $FileUploader = new FileUploader('files', array(
+            // options
+            // example: ['jpg', 'pdf', 'text/plain', 'audio/*']
+            'extensions' => ['jpg', 'pdf', 'text/plain', 'audio/*'],
+            'limit' => 4,
+            'uploadDir' => storage_path('app/public/'),
+            'title' => 'auto'
+        ));
+            // upload
+            $upload = $FileUploader->upload();
+
+            if ($upload['isSuccess']) {
+                $certs = LicenseCertificates::where('license_id', $employee->license->id)->get();
+                if (empty($certs)) {
+                    foreach ($upload['files'] as $cert) {
+                        $uploadCert = LicenseCertificates::create([
+                    'license_id' => $employee->license->id,
+                    'cert' => $cert['name']
+                ]);
+                    }
+                } else {
+                    $v = LicenseCertificates::where('license_id', $employee->license->id)->delete();
+                    foreach ($upload['files'] as $cert) {
+                        $uploadCert = LicenseCertificates::create([
+                    'license_id' => $employee->license->id,
+                    'cert' => $cert['name']
+                ]);
+                    }
+                }
+            }
+            if ($upload['hasWarnings']) {
+                // get the warnings
+                $warnings = $upload['warnings'];
+                return \Redirect::route('employee.index', $employee->id)->with('success', $warnings);
+            }
+        }
 
         if ($request->has('profile_image')) {
 
@@ -141,9 +176,7 @@ class EmployeeController extends Controller
 
     public function store(Request $request)
     {
-
         try {
-
             $this->validate($request, [
                 'name' => 'required',
                 'surname' => 'required',
@@ -222,7 +255,6 @@ class EmployeeController extends Controller
 
     public function pdf($id)
     {
-
         $employee = Employee::where('id', $id)->with(['license', 'employer'])->get();
 
         $employee = $employee[0];
@@ -239,6 +271,17 @@ class EmployeeController extends Controller
 
 
         return $pdf->download($name . '.pdf');
+    }
+
+    /**
+     * delete a file
+     *
+     * @return void
+     */
+    public function removeFile(Request $request)
+    {
+        unlink($_POST['file']);
+        exit;
     }
 
 

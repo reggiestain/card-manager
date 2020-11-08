@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <h1 class="mt-4">
                 Edit Driving Instructor
-                <img src="<?php echo e(asset("img/logo/dvla.jpeg")); ?>" alt="dvla logo" style="width:120px;height:120px; margin-left: 400px" />
+                <img src="<?php echo e(asset('img/logo/dvla.jpeg')); ?>" alt="dvla logo" style="width:120px;height:120px; margin-left: 400px" />
             </h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
@@ -483,7 +483,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                                                     </div>
                                                     <div class='form-group'>
-                                                        <label class="control-label">Year of license registration</label>
+                                                        <label class="control-label">Year of certification</label>
                                                         <div class="form-group">
                                                             <div class='input-group date' id='datetimepicker3'>
                                                                 <input type='text' name="reg_date" class="form-control <?php $__errorArgs = ['reg_date'];
@@ -512,12 +512,23 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                     </div>
-                                                    <!--<div class='form-group col-md-12'>
-                                                        <label class="control-label">Upload Instructor Certificate</label>
-                                                        <div class="form-group">
-                                                        <input id="input-b1" name="input-b1" type="file" class="file" data-browse-on-zone-click="true">
-                                                        </div>
-                                                        <?php $__errorArgs = ['expiry_date'];
+                                                    <div class='form-group col-md-12'>
+                                                    <div>Certificate</div>
+                                                    <div>
+                                                    <?php $__currentLoopData = $employee->license->cert; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cert): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <img class="ezv" <?php if(substr($cert->cert, -3) == 'pdf'): ?>
+                                                    src="<?php echo e(asset('/img/'.'pdf.png')); ?>"
+                                                    href="<?php echo e(asset('/card/storage/app/public/'.$cert->cert)); ?>"
+                                                    <?php else: ?>
+                                                    src="<?php echo e(asset('/card/storage/app/public/'.$cert->cert)); ?>"
+                                                    <?php endif; ?>
+                                                    title="Certificate Image" width="100" height="100">
+                                                    <button class="delete">X</button>
+                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    </div>
+                                                    <label class="control-label">Upload certificate</label>
+                                                    <input type="file" name="files" class="form-control">
+                                                    <?php $__errorArgs = ['expiry_date'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -525,11 +536,12 @@ $message = $__bag->first($__errorArgs[0]); ?>
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong><?php echo e($message); ?></strong>
                                                         </span>
-                                                        <?php unset($message);
+                                                    <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                                                    </div>-->
+
+                                                    </div>
 
                                                     <button class="btn btn-primary nextBtn" style="float:right" type="button">Next</button>
                                                 </div>

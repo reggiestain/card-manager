@@ -513,19 +513,25 @@ endif;
 unset($__errorArgs, $__bag); ?>
                                                     </div>
                                                     <div class='form-group col-md-12'>
-                                                    <div>Certificate</div>
-                                                    <div>
+                                                    <label>License Certificate</label>
+                                                    <div class="row">
                                                     <?php $__currentLoopData = $employee->license->cert; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cert): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                    <img class="ezv" <?php if(substr($cert->cert, -3) == 'pdf'): ?>
+                                                    <div class="col-md-4">
+                                                    <img class="thumbnail ezv" <?php if(substr($cert->cert, -3) == 'pdf'): ?>
                                                     src="<?php echo e(asset('/img/'.'pdf.png')); ?>"
                                                     href="<?php echo e(asset('/card/storage/app/public/'.$cert->cert)); ?>"
                                                     <?php else: ?>
                                                     src="<?php echo e(asset('/card/storage/app/public/'.$cert->cert)); ?>"
                                                     <?php endif; ?>
-                                                    title="Certificate Image" width="100" height="100">
+                                                    title="Certificate Image"
+                                                    width="200" height="150"
+                                                    >
                                                     <button class="delete">X</button>
-                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </div>
+                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                                                    </div>
+
                                                     <label class="control-label">Upload certificate</label>
                                                     <input type="file" name="files" class="form-control">
                                                     <?php $__errorArgs = ['expiry_date'];

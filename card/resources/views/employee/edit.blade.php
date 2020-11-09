@@ -304,19 +304,25 @@
                                                         @enderror
                                                     </div>
                                                     <div class='form-group col-md-12'>
-                                                    <div>Certificate</div>
-                                                    <div>
+                                                    <label>License Certificate</label>
+                                                    <div class="row">
                                                     @foreach($employee->license->cert as $cert)
-                                                    <img class="ezv" @if(substr($cert->cert, -3) == 'pdf')
+                                                    <div class="col-md-4">
+                                                    <img class="thumbnail ezv" @if(substr($cert->cert, -3) == 'pdf')
                                                     src="{{asset('/img/'.'pdf.png')}}"
                                                     href="{{asset('/card/storage/app/public/'.$cert->cert)}}"
                                                     @else
                                                     src="{{asset('/card/storage/app/public/'.$cert->cert)}}"
                                                     @endif
-                                                    title="Certificate Image" width="100" height="100">
+                                                    title="Certificate Image"
+                                                    width="200" height="150"
+                                                    >
                                                     <button class="delete">X</button>
-                                                    @endforeach
                                                     </div>
+                                                    @endforeach
+
+                                                    </div>
+
                                                     <label class="control-label">Upload certificate</label>
                                                     <input type="file" name="files" class="form-control">
                                                     @error('expiry_date')

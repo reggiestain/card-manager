@@ -513,13 +513,17 @@ endif;
 unset($__errorArgs, $__bag); ?>
                                                     </div>
                                                     <div class='form-group col-md-12'>
+                                                    <?php if(empty($employee->license->cert)): ?>
+
+                                                    <?php else: ?>
                                                     <label>License Certificate</label>
-                                                    <div class="row">
+                                                    <?php endif; ?>
+                                                    <div  class="row">
                                                     <?php $__currentLoopData = $employee->license->cert; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cert): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <div class="col-md-4">
-                                                    <img class="thumbnail ezv" <?php if(substr($cert->cert, -3) == 'pdf'): ?>
+                                                    <img class="thumbnail" <?php if(substr($cert->cert, -3) == 'pdf'): ?>
                                                     src="<?php echo e(asset('/img/'.'pdf.png')); ?>"
-                                                    href="<?php echo e(asset('/card/storage/app/public/'.$cert->cert)); ?>"
+                                                    href="<?php echo e(url('/card/storage/app/public/'.$cert->cert)); ?>"
                                                     <?php else: ?>
                                                     src="<?php echo e(asset('/card/storage/app/public/'.$cert->cert)); ?>"
                                                     <?php endif; ?>
@@ -729,5 +733,6 @@ unset($__errorArgs, $__bag); ?>
         </div>
     </main>
     <?php $__env->stopSection(); ?>
+
 
 <?php echo $__env->make('layouts.dashboard', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\wamp64\www\ID-Management\card\resources\views/employee/edit.blade.php ENDPATH**/ ?>

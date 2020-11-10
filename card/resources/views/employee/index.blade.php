@@ -4,7 +4,7 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid">
-            <h1 class="mt-4">View Driving Instructors  <img src="{{asset("img/logo/dvla.jpeg")}}" 
+            <h1 class="mt-4">View Driving Instructors  <img src="{{asset('img/logo/dvla.jpeg')}}"
                 alt="dvla logo" style="width:120px;height:120px; margin-left: 400px"/></h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
@@ -12,7 +12,7 @@
             </ol>
         <div>
             <ul class="nav">
-                <li class="ml-auto"><a href="{{route("employee.add",$id)}}" class="nav-link"><span class="fa fa-plus"></span> Add</a></li>
+                <li class="ml-auto"><a href="{{route('employee.add',$id)}}" class="nav-link"><span class="fa fa-plus"></span> Add</a></li>
              </ul>
         </div>
             <div class="card mb-4">
@@ -20,14 +20,14 @@
                             <div class="table-responsive">
                                 @if ($message = Session::get('success'))
                                 <div class="alert alert-success alert-block">
-                                    <button type="button" class="close" data-dismiss="alert">×</button>    
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
                                     <strong>{{ $message }}</strong>
                                 </div>
                                 @endif
 
                                 @if ($message = Session::get('error'))
                                 <div class="alert alert-danger alert-block">
-                                    <button type="button" class="close" data-dismiss="alert">×</button>    
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
                                     <strong>{{ $message }}</strong>
                                 </div>
                                 @endif
@@ -57,14 +57,14 @@
                                             <td>{{$employee->created_at}}</td>
                                             <td>
                                                 <a href="{{route('employee.view',$employee->id)}}" id="pdf-view" class="btn-success btn-sm">View</a>
-                                                <a href="{{route('employee.edit',$employee->id)}}" class="btn-info btn-sm">Edit</a>  
-                                                <a href="#" class="btn-danger btn-sm">Delete</a> 
+                                                <a href="{{route('employee.edit',$employee->id)}}" class="btn-info btn-sm">Edit</a>
+                                                <a href="#" class="btn-danger btn-sm">Delete</a>
                                             </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
-                                </div>    
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -73,6 +73,6 @@
         </div>
         <!-- /.container-fluid -->
     </div>
-    @endsection     
+    @endsection
 
 

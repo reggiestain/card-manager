@@ -304,20 +304,24 @@
                                                         @enderror
                                                     </div>
                                                     <div class='form-group col-md-12'>
+                                                    @if (empty($employee->license->cert))
+
+                                                    @else
                                                     <label>License Certificate</label>
-                                                    <div class="row">
+                                                    @endif
+                                                    <div  class="row">
                                                     @foreach($employee->license->cert as $cert)
                                                     <div class="col-md-4">
-                                                    <img class="thumbnail ezv" @if(substr($cert->cert, -3) == 'pdf')
+                                                    <img class="thumbnail" @if(substr($cert->cert, -3) == 'pdf')
                                                     src="{{asset('/img/'.'pdf.png')}}"
-                                                    href="{{asset('/card/storage/app/public/'.$cert->cert)}}"
+                                                    href="{{asset('/card/storage/app/public/uploads/'.$cert->cert)}}"
                                                     @else
-                                                    src="{{asset('/card/storage/app/public/'.$cert->cert)}}"
+                                                    src="{{asset('/card/storage/app/public/uploads/'.$cert->cert)}}"
                                                     @endif
                                                     title="Certificate Image"
                                                     width="200" height="150"
                                                     >
-                                                    <button class="delete">X</button>
+                                                    <a href="#" class="delete">X</a>
                                                     </div>
                                                     @endforeach
 
@@ -429,3 +433,4 @@
         </div>
     </main>
     @endsection
+

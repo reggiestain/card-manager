@@ -40,21 +40,11 @@ return [
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),
-            'permissions' => [
-                'file' => [
-                    'public' => 0664,
-                    'private' => 0600,
-                ],
-                'dir' => [
-                    'public' => 0775,
-                    'private' => 0700,
-                ],
-            ],
         ],
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL') . '/upload',
+            'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
         ],
         's3' => [
@@ -65,5 +55,9 @@ return [
             'bucket' => env('AWS_BUCKET'),
             'url' => env('AWS_URL'),
         ],
+    ],
+    'links' => [
+        public_path('img') => storage_path('app/public/uploads'),
+        //public_path('img') => storage_path('app/images'),
     ],
 ];

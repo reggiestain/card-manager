@@ -200,6 +200,7 @@ class FileUploader
                         $file['chunked'] = true;
                         if ($file['chunked'] ? rename($file['tmp_name'], $file['file']) : $this->options['move_uploaded_file']($file['tmp_name'], $file['file'])) {
                             $s =$this->options['move_uploaded_file']($file['tmp_name'], $file['file']);
+                            chmod($file['file'], 775);
                             unset($data['files'][$key]['chunked']);
                             unset($data['files'][$key]['error']);
                             unset($data['files'][$key]['tmp_name']);

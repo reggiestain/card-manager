@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
+
 //use App\Crop;
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,13 +25,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->bind('path.public', function () {
-
-            if (config('app.url') == 'http://www.mosimalegal.com') {
-                //return base_path() . '/';
-            }
-        });
-
         view()->composer(['layouts.dashboard', 'layouts.partial.topbar'], function ($view) {
             $view->with([
                 'user' => Auth::user(),

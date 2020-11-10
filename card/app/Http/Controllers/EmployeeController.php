@@ -99,9 +99,9 @@ class EmployeeController extends Controller
             $FileUploader = new FileUploader('files', array(
             // options
             // example: ['jpg', 'pdf', 'text/plain', 'audio/*']
-            'extensions' => ['jpg', 'pdf', 'text/plain', 'audio/*'],
+            'extensions' => ['jpg', 'png','jpeg'],
             'limit' => 4,
-            'uploadDir' => storage_path('app/public/'),
+            'uploadDir' => storage_path('app/public/uploads/'),
             'title' => 'auto'
         ));
             // upload
@@ -129,12 +129,11 @@ class EmployeeController extends Controller
             if ($upload['hasWarnings']) {
                 // get the warnings
                 $warnings = $upload['warnings'];
-                return \Redirect::route('employee.index', $employee->id)->with('success', $warnings);
+                return \Redirect::route('employee.index', $employee->id)->with('success', $warnings[0]);
             }
         }
 
         if ($request->has('profile_image')) {
-
             // Get image file
             $image = $request->file('profile_image');
             // Make a image name based on user name and current timestamp
@@ -263,11 +262,12 @@ class EmployeeController extends Controller
 
         $genders = ['Male', 'Female'];
 
+        $customPaper = array(0,0,720,1440);
         $pdf = PDF::loadView('employee.pdf', [
 
             'employee' => $employee,
             'genders' => $genders,
-        ]);
+        ])->setPaper($customPaper, 'portrait');
 
 
         return $pdf->download($name . '.pdf');

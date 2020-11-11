@@ -1,103 +1,14 @@
 @extends('layouts.pdf')
 @section('content')
 <div class="table-responsive">
-<<<<<<< HEAD
-    <table class="table table-striped">
-        <caption></caption>
-        <thead>
-            <tr>
-                <th colspan="6">
-                    <h4>PERSONAL DETAILS</h4>
-                </th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr>
-                <td colspan="3">
-                    <strong>Name</strong> {{$employee->name}}
-                    <br><br>
-                    <strong>ID No:</strong> {{$employee->id_number}}
-                    <br><br>
-                    <strong>Email:</strong> {{$employee->email}}
-                    <br><br>
-                </td>
-                <td colspan="5">
-                    <strong>Surname :</strong> {{$employee->surname}}
-                    <br><br>
-                    <strong>Gender:</strong> {{$employee->gender}}
-                    <br><br>
-                    <strong>TEL :</strong> {{$employee->mobile}}
-                    <br><br>
-                </td>
-                <td colspan="5">
-                    <br />
-                    @if ($employee->profile_image)
-
-                    <img src="{{ asset('/card/storage/app/public'.$employee->profile_image)}}" alt=" profile" width="150" height="150" />
-                    @else
-                    @endif
-                </td>
-            </tr>
-            <tr>
-                <th colspan="6">
-                    <h4>LICENSE DETAILS</h4>
-                </th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
                 <th></th>
                 <th></th>
                 <th></th>
                 <br><br>
             </tr>
             <tr>
-                <td colspan="5">
-                    <strong>C of C /Reference number: </strong> #{{$employee->license->cert_no}}
-                    <br><br>
-                    <strong>Driver's License No: </strong> {{$employee->license->issued_date}}
-                    <br><br>
-                    <strong>Class :</strong> {{$employee->license->lic_cat}}
-                </td>
-                <td colspan="5">
-                    <strong>Issued Date: </strong> #{{$employee->license->app_no}}
-                    <br><br>
-                    <strong>Expiry Date: </strong> {{$employee->license->issued_date}}
-                    <br><br>
-                    <strong style="color:#fff">X</strong>
-                </td>
-            </tr>
-            <tr>
-                <th colspan="6">
-                    <h4>EMPLOYER DETAILS</h4>
-                </th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <br><br>
-            </tr>
-            <tr>
-                <td colspan="5">
-                    <strong>School :</strong> {{$employee->surname}}
-                    <br><br>
-                    <strong>Email :</strong> {{$employee->mobile}}
-                    <br><br>
-                </td>
-                <td colspan="5">
-                    <strong>Contact Person:</strong> {{$employee->gender}}
-                    <br><br>
-                </td>
-            </tr>
-        </thead>
-        <!--<tbody>
-            <tr>
+      
+      
 <table class="table table-striped">
                                             <caption></caption>
                                             <thead>

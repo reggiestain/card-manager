@@ -217,7 +217,6 @@
                                         </table>
                                     </div>
 
-</div>
 <div>
     <h4>Declaration:</h4>
     <p>

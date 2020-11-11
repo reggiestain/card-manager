@@ -60,14 +60,14 @@
             </tr>
             <tr>
                 <td colspan="5">
-                    <strong>Certificate No: </strong> #{{$employee->license->cert_no}}
+                    <strong>C of C /Reference number: </strong> #{{$employee->license->cert_no}}
                     <br><br>
-                    <strong>Issued Date: </strong> {{$employee->license->issued_date}}
+                    <strong>Driver's License No: </strong> {{$employee->license->issued_date}}
                     <br><br>
-                    <strong>Category :</strong> {{$employee->license->lic_cat}}
+                    <strong>Class :</strong> {{$employee->license->lic_cat}}
                 </td>
                 <td colspan="5">
-                    <strong>Driver's License No: </strong> #{{$employee->license->app_no}}
+                    <strong>Issued Date: </strong> #{{$employee->license->app_no}}
                     <br><br>
                     <strong>Expiry Date: </strong> {{$employee->license->issued_date}}
                     <br><br>

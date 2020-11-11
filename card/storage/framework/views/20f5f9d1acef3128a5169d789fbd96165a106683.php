@@ -1,7 +1,7 @@
 <?php $__env->startSection('content'); ?>
-<div class="table-responsive">
-<table class="table table-striped">
-                                            <caption></caption>
+                     <div class="table-responsive">
+                      <table class="table tablssse-striped">
+                           <caption></caption>
                                             <thead>
                                                 <tr>
                                                     <th colspan="6">
@@ -14,7 +14,8 @@
                                                     <th></th>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="3">
+                                                    <td colspan="4">
+                                                        <br><br>
                                                         <strong>Name</strong> <?php echo e($employee->name); ?>
 
                                                         <br><br>
@@ -28,7 +29,8 @@
 
                                                         <br><br>
                                                     </td>
-                                                    <td colspan="3">
+                                                    <td colspan="4">
+                                                        <br><br>
                                                         <strong>Surname :</strong> <?php echo e($employee->surname); ?>
 
                                                         <br><br>
@@ -42,7 +44,8 @@
 
                                                         <br><br>
                                                     </td>
-                                                    <td colspan="3">
+                                                    <td colspan="4">
+                                                        <br><br>
                                                         <?php if($employee->profile_image): ?>
                                                         <img src="<?php echo e(asset('/card/storage/app/public'.$employee->profile_image)); ?>" alt="profile" width="150" height="150" />
                                                         <?php else: ?>
@@ -62,7 +65,7 @@
                                                     <th></th>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="4">
+                                                    <td colspan="6">
                                                         <strong>Driver's License No: </strong> #<?php echo e($employee->license->app_no); ?>
 
                                                         <br><br>
@@ -72,7 +75,7 @@
                                                         <strong>C of C / Reference Number: </strong> <?php echo e(join('/', str_split($employee->license->cert_no,2) )); ?>
 
                                                     </td>
-                                                    <td colspan="4">
+                                                    <td colspan="6">
                                                         <strong>Issue Date: </strong> <?php echo e($employee->license->issued_date); ?>
 
                                                         <br><br>
@@ -136,7 +139,7 @@
 <div>
     <h4>Declaration:</h4>
     <p>
-        I confirm that all the details in this  form are correct and that I will provide copies of the appropriate photographs and documents where required. I understand and agree that DVLA will use these and other data to create and maintain records on me, both during my active and non-active status as a beneficiary.
+        I confirm that all the details in this registration form are correct and that I will provide copies of the appropriate photographs and documents where required. I understand and agree that DVLA will use these and other data to create and maintain records on me, both during my active and non-active status as a beneficiary.
     </p>
 
 </div>

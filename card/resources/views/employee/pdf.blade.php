@@ -1,8 +1,8 @@
 @extends('layouts.pdf')
 @section('content')
-<div class="table-responsive">
-<table class="table table-striped">
-                                            <caption></caption>
+                     <div class="table-responsive">
+                      <table class="table tablssse-striped">
+                           <caption></caption>
                                             <thead>
                                                 <tr>
                                                     <th colspan="6">
@@ -15,7 +15,8 @@
                                                     <th></th>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="3">
+                                                    <td colspan="4">
+                                                        <br><br>
                                                         <strong>Name</strong> {{$employee->name}}
                                                         <br><br>
                                                         <strong>ID No:</strong> {{$employee->id_number}}
@@ -25,7 +26,8 @@
                                                         <strong>Date of birth:</strong> {{$employee->birth_date}}
                                                         <br><br>
                                                     </td>
-                                                    <td colspan="3">
+                                                    <td colspan="4">
+                                                        <br><br>
                                                         <strong>Surname :</strong> {{$employee->surname}}
                                                         <br><br>
                                                         <strong>Gender:</strong> {{$employee->gender}}
@@ -35,7 +37,8 @@
                                                         <strong>Nationality :</strong> {{$employee->nationality}}
                                                         <br><br>
                                                     </td>
-                                                    <td colspan="3">
+                                                    <td colspan="4">
+                                                        <br><br>
                                                         @if ($employee->profile_image)
                                                         <img src="{{asset('/card/storage/app/public'.$employee->profile_image)}}" alt="profile" width="150" height="150" />
                                                         @else
@@ -55,14 +58,14 @@
                                                     <th></th>
                                                 </tr>
                                                 <tr>
-                                                    <td colspan="4">
+                                                    <td colspan="6">
                                                         <strong>Driver's License No: </strong> #{{$employee->license->app_no}}
                                                         <br><br>
                                                         <strong>Category :</strong> {{$employee->license->lic_cat}}
                                                         <br><br>
                                                         <strong>C of C / Reference Number: </strong> {{ join('/', str_split($employee->license->cert_no,2) )}}
                                                     </td>
-                                                    <td colspan="4">
+                                                    <td colspan="6">
                                                         <strong>Issue Date: </strong> {{$employee->license->issued_date}}
                                                         <br><br>
                                                         <strong>Expiry Date: </strong> {{$employee->license->expiry_date}}

@@ -523,14 +523,14 @@ unset($__errorArgs, $__bag); ?>
                                                     <div class="col-md-4">
                                                     <img class="thumbnail" <?php if(substr($cert->cert, -3) == 'pdf'): ?>
                                                     src="<?php echo e(asset('/img/'.'pdf.png')); ?>"
-                                                    href="<?php echo e(url('/card/storage/app/public/'.$cert->cert)); ?>"
+                                                    href="<?php echo e(asset('/card/storage/app/public/uploads/'.$cert->cert)); ?>"
                                                     <?php else: ?>
-                                                    src="<?php echo e(asset('/card/storage/app/public/'.$cert->cert)); ?>"
+                                                    src="<?php echo e(asset('/card/storage/app/public/uploads/'.$cert->cert)); ?>"
                                                     <?php endif; ?>
                                                     title="Certificate Image"
                                                     width="200" height="150"
                                                     >
-                                                    <button class="delete">X</button>
+                                                    <a href="#" class="delete">X</a>
                                                     </div>
                                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 

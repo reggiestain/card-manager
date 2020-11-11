@@ -5,7 +5,7 @@
             <h1 class="mt-4">View Driving Instructors  <img src="<?php echo e(asset('img/logo/dvla.jpeg')); ?>"
                 alt="dvla logo" style="width:120px;height:120px; margin-left: 400px"/></h1>
             <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="<?php echo e(route('employee.index',$employees[0]->institution_id)); ?>">Dashboard</a></li>
                 <li class="breadcrumb-item active"> View Driving Instructors </li>
             </ol>
         <div>

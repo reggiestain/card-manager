@@ -254,19 +254,10 @@
             </div>
         </div>
     </div>
-
     </div>
-
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Bootstrap core JavaScript-->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-
-        integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
-
-        crossorigin="anonymous">
-
-</script>
-
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>-->
     <script src="{{ asset('js/scripts.js') }}"></script>
     <script src="{{ asset('js/jquery.fileuploader.min.js') }}" type="text/javascript"></script>

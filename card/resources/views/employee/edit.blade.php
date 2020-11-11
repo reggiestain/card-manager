@@ -10,7 +10,7 @@
                 <img src="{{asset('img/logo/dvla.jpeg')}}" alt="dvla logo" style="width:120px;height:120px; margin-left: 400px" />
             </h1>
             <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{route('employee.index',$employee->institution_id)}}">Dashboard</a></li>
                 <li class="breadcrumb-item active">Edit Driving Instructor</li>
             </ol>
             <div class="card mb-4">

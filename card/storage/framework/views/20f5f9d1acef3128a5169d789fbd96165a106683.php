@@ -1,5 +1,4 @@
-@extends('layouts.pdf')
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="table-responsive">
     <table class="table table-striped">
         <caption></caption>
@@ -17,31 +16,33 @@
             </tr>
             <tr>
                 <td colspan="3">
-                    <strong>Name</strong> {{$employee->name}}
+                    <strong>Name</strong> <?php echo e($employee->name); ?>
+
                     <br><br>
-                    <strong>ID No:</strong> {{$employee->id_number}}
+                    <strong>ID No:</strong> <?php echo e($employee->id_number); ?>
+
                     <br><br>
-                    <strong>Email:</strong> {{$employee->email}}
+                    <strong>Email:</strong> <?php echo e($employee->email); ?>
+
                     <br><br>
                 </td>
                 <td colspan="5">
-                    <strong>Surname :</strong> {{$employee->surname}}
+                    <strong>Surname :</strong> <?php echo e($employee->surname); ?>
+
                     <br><br>
-                    <strong>Gender:</strong> {{$employee->gender}}
+                    <strong>Gender:</strong> <?php echo e($employee->gender); ?>
+
                     <br><br>
-                    <strong>TEL :</strong> {{$employee->mobile}}
+                    <strong>TEL :</strong> <?php echo e($employee->mobile); ?>
+
                     <br><br>
                 </td>
                 <td colspan="5">
                     <br />
-                    @if ($employee->profile_image)
-<<<<<<< HEAD
-                    <img src="{{ asset('/card/storage/app/public'.$employee->profile_image)}}" alt=" profile" width="100" height="100" />
-=======
-                    <img src="{{ asset('/card/storage/app/public'.$employee->profile_image)}}" alt=" profile" width="150" height="150" />
->>>>>>> 302745d68e845183c354bf22ef91d5620ec815cc
-                    @else
-                    @endif
+                    <?php if($employee->profile_image): ?>
+                    <img src="<?php echo e(asset('/card/storage/app/public'.$employee->profile_image)); ?>" alt=" profile" width="100" height="100" />
+                    <?php else: ?>
+                    <?php endif; ?>
                 </td>
             </tr>
             <tr>
@@ -60,16 +61,21 @@
             </tr>
             <tr>
                 <td colspan="5">
-                    <strong>Certificate No: </strong> #{{$employee->license->cert_no}}
+                    <strong>Certificate No: </strong> #<?php echo e($employee->license->cert_no); ?>
+
                     <br><br>
-                    <strong>Issued Date: </strong> {{$employee->license->issued_date}}
+                    <strong>Issued Date: </strong> <?php echo e($employee->license->issued_date); ?>
+
                     <br><br>
-                    <strong>Category :</strong> {{$employee->license->lic_cat}}
+                    <strong>Category :</strong> <?php echo e($employee->license->lic_cat); ?>
+
                 </td>
                 <td colspan="5">
-                    <strong>Driver's License No: </strong> #{{$employee->license->app_no}}
+                    <strong>Driver's License No: </strong> #<?php echo e($employee->license->app_no); ?>
+
                     <br><br>
-                    <strong>Expiry Date: </strong> {{$employee->license->issued_date}}
+                    <strong>Expiry Date: </strong> <?php echo e($employee->license->issued_date); ?>
+
                     <br><br>
                     <strong style="color:#fff">X</strong>
                 </td>
@@ -87,13 +93,16 @@
             </tr>
             <tr>
                 <td colspan="5">
-                    <strong>School :</strong> {{$employee->surname}}
+                    <strong>School :</strong> <?php echo e($employee->surname); ?>
+
                     <br><br>
-                    <strong>Email :</strong> {{$employee->mobile}}
+                    <strong>Email :</strong> <?php echo e($employee->mobile); ?>
+
                     <br><br>
                 </td>
                 <td colspan="5">
-                    <strong>Contact Person:</strong> {{$employee->gender}}
+                    <strong>Contact Person:</strong> <?php echo e($employee->gender); ?>
+
                     <br><br>
                 </td>
             </tr>
@@ -111,17 +120,17 @@
 
             </tr>
 
-            @foreach($employee->employer as $employer)
+            <?php $__currentLoopData = $employee->employer; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $employer): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <tr>
-                <td colspan="2">{{$employer->emp_name}}</td>
-                <td colspan="2">{{$employer->contact_person}}</td>
-                <td colspan="2">{{$employer->contact_number}}</td>
-                <td colspan="2">{{$employer->emp_email}}</td>
+                <td colspan="2"><?php echo e($employer->emp_name); ?></td>
+                <td colspan="2"><?php echo e($employer->contact_person); ?></td>
+                <td colspan="2"><?php echo e($employer->contact_number); ?></td>
+                <td colspan="2"><?php echo e($employer->emp_email); ?></td>
                 <td></td>
                 <td></td>
                 <td></td>
             </tr>
-            @endforeach
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
         </tbody>-->
         <tfoot>
@@ -140,4 +149,6 @@
 
 </div>
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.pdf', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\wamp64\www\ID-Management\card\resources\views/employee/pdf.blade.php ENDPATH**/ ?>

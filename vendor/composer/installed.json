@@ -52,6 +52,15 @@
             "preview",
             "progress",
             "upload"
+<<<<<<< HEAD
+=======
+        ],
+        "funding": [
+            {
+                "url": "https://opencollective.com/bootstrap-fileinput",
+                "type": "open_collective"
+            }
+>>>>>>> 302745d68e845183c354bf22ef91d5620ec815cc
         ]
     }
 ]

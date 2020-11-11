@@ -1,0 +1,9 @@
+/node_modules
+/public/hot
+/card/storage
+/card/storage/*.key
+/nbproject
+/card/vendor
+/card/.env
+
+

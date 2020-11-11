@@ -1,14 +1,6 @@
 @extends('layouts.pdf')
 @section('content')
 <div class="table-responsive">
-                <th></th>
-                <th></th>
-                <th></th>
-                <br><br>
-            </tr>
-            <tr>
-      
-      
 <table class="table table-striped">
                                             <caption></caption>
                                             <thead>
@@ -131,7 +123,7 @@
 <div>
     <h4>Declaration:</h4>
     <p>
-        I confirm that all the details in this  form are correct and that I will provide copies of the appropriate photographs and documents where required. I understand and agree that DVLA will use these and other data to create and maintain records on me, both during my active and non-active status as a beneficiary.
+        I confirm that all the details in this registration form are correct and that I will provide copies of the appropriate photographs and documents where required. I understand and agree that DVLA will use these and other data to create and maintain records on me, both during my active and non-active status as a beneficiary.
     </p>
 
 </div>

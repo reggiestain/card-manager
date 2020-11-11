@@ -44,7 +44,7 @@
                                                     </td>
                                                     <td colspan="3">
                                                         <?php if($employee->profile_image): ?>
-                                                        <img src="<?php echo e(asset('/card/storage/app/public'.$employee->profile_image)); ?>" alt="profile" class="img-thumbnail" width="200" height="200" />
+                                                        <img src="<?php echo e(asset('/card/storage/app/public'.$employee->profile_image)); ?>" alt="profile" width="150" height="150" />
                                                         <?php else: ?>
 
                                                         <?php endif; ?>
@@ -133,11 +133,10 @@
                                         </table>
                                     </div>
 
-</div>
 <div>
     <h4>Declaration:</h4>
     <p>
-        I confirm that all the details in this registration form are correct and that I will provide copies of the appropriate photographs and documents where required. I understand and agree that DVLA will use these and other data to create and maintain records on me, both during my active and non-active status as a beneficiary.
+        I confirm that all the details in this  form are correct and that I will provide copies of the appropriate photographs and documents where required. I understand and agree that DVLA will use these and other data to create and maintain records on me, both during my active and non-active status as a beneficiary.
     </p>
 
 </div>

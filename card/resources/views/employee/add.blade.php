@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <h1 class="mt-4">
                 Create Driving Instructor
-                <img src="{{asset('img/logo/dvla.jpeg')}}" alt="dvla logo" style="width:120px;height:120px; margin-left: 400px" />
+                <img src="{{asset('img/logo/dvla-logo.jpeg')}}" alt="dvla logo" style="width:120px;height:120px; margin-left: 400px" />
             </h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="#">Dashboard</a></li>

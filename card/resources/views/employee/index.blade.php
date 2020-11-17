@@ -4,7 +4,7 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid">
-            <h1 class="mt-4">View Driving Instructors  <img src="{{asset('img/logo/dvla.jpeg')}}"
+            <h1 class="mt-4">View Driving Instructors  <img src="{{asset('img/logo/dvla-logo.jpeg')}}"
                 alt="dvla logo" style="width:120px;height:120px; margin-left: 400px"/></h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="{{route('employee.index',$employees[0]->institution_id)}}">Dashboard</a></li>

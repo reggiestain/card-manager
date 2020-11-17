@@ -30,7 +30,7 @@
         <div class="container my-auto">
             <div class="copyright my-auto">
                 <span>
-                    <img src="{{asset('/img/logo/dvla.jpeg')}}" alt="dvla logo" style="width:120px;height:120px; margin-left: 500px" />
+                    <img src="{{asset('/img/logo/dvla-logo.jpeg')}}" alt="dvla logo" style="width:120px;height:120px; margin-left: 500px" />
 
                 </span>
             </div>

@@ -6,7 +6,7 @@
     <main>
         <div class="container-fluid">
             <h1 class="mt-4 ">View Driving Instructor
-                <img src="{{asset("img/logo/dvla.jpeg")}}" alt="dvla logo" style="width:120px;height:120px; margin-left: 400px" />
+                <img src="{{asset('img/logo/dvla-logo.jpeg')}}" alt="dvla logo" style="width:120px;height:120px; margin-left: 400px" />
             </h1>
 
             <ol class="breadcrumb mb-4">

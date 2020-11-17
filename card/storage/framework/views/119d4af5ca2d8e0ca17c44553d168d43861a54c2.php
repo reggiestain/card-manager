@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <h1 class="mt-4">
                 Edit Driving Instructor
-                <img src="<?php echo e(asset('img/logo/dvla.jpeg')); ?>" alt="dvla logo" style="width:120px;height:120px; margin-left: 400px" />
+                <img src="<?php echo e(asset('img/logo/dvla-logo.jpeg')); ?>" alt="dvla logo" style="width:120px;height:120px; margin-left: 400px" />
             </h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="<?php echo e(route('employee.index',$employee->institution_id)); ?>">Dashboard</a></li>
@@ -381,7 +381,8 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>">
-                                                            <option value="<?php echo e($employee->license->lic_cat_1); ?>" disabled selected><?php echo e($employee->license->lic_cat_1 ?? 'Select Category'); ?></option>
+                                                            <option value="<?php echo e($employee->license->lic_cat_1); ?>"
+                                                                <?php if($employee->license->lic_cat_1): ?> selected <?php endif; ?>><?php echo e($employee->license->lic_cat_1 ?? 'Select Category'); ?></option>
                                                             <?php $__currentLoopData = $licCat; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                             <option value="<?php echo e($cat); ?>"><?php echo e($cat); ?></option>
                                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -410,7 +411,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>">
                                                             <option value="<?php if($employee->license->lic_cat_2): ?><?php echo e($employee->license->lic_cat_2); ?> <?php else: ?> 'null' <?php endif; ?>"
-                                                                disabled selected><?php echo e($employee->license->lic_cat_2 ?? 'Select Category'); ?></option>
+                                                               selected><?php echo e($employee->license->lic_cat_2 ?? 'Select Category'); ?></option>
                                                             <?php $__currentLoopData = $licCat; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                             <option value="<?php echo e($cat); ?>"><?php echo e($cat); ?></option>
                                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

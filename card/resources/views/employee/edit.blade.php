@@ -7,7 +7,7 @@
         <div class="container-fluid">
             <h1 class="mt-4">
                 Edit Driving Instructor
-                <img src="{{asset('img/logo/dvla.jpeg')}}" alt="dvla logo" style="width:120px;height:120px; margin-left: 400px" />
+                <img src="{{asset('img/logo/dvla-logo.jpeg')}}" alt="dvla logo" style="width:120px;height:120px; margin-left: 400px" />
             </h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="{{route('employee.index',$employee->institution_id)}}">Dashboard</a></li>
@@ -235,7 +235,8 @@
                                                     <div class="form-group col-md-3">
                                                         <label class="control-label">License Category 1</label>
                                                         <select class="form-control" id="selectCat1" name="lic_cat_1" class="form-control @error('lic_cat_1') is-invalid @enderror">
-                                                            <option value="{{ $employee->license->lic_cat_1}}" disabled selected>{{ $employee->license->lic_cat_1 ?? 'Select Category'}}</option>
+                                                            <option value="{{ $employee->license->lic_cat_1}}"
+                                                                @if($employee->license->lic_cat_1) selected @endif>{{ $employee->license->lic_cat_1 ?? 'Select Category'}}</option>
                                                             @foreach($licCat as $cat)
                                                             <option value="{{$cat}}">{{$cat}}</option>
                                                             @endforeach
@@ -250,7 +251,7 @@
                                                         <label class="control-label">License Category 2</label>
                                                         <select class="form-control" id="selectCat2" name="lic_cat_2" class="form-control @error('lic_cat_2') is-invalid @enderror">
                                                             <option value="@if($employee->license->lic_cat_2){{$employee->license->lic_cat_2}} @else 'null' @endif"
-                                                                disabled selected>{{ $employee->license->lic_cat_2 ?? 'Select Category'}}</option>
+                                                               selected>{{ $employee->license->lic_cat_2 ?? 'Select Category'}}</option>
                                                             @foreach($licCat as $cat)
                                                             <option value="{{$cat}}">{{$cat}}</option>
                                                             @endforeach

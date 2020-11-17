@@ -72,7 +72,7 @@ class EmployeeController extends Controller
 
         $genders = ['Male', 'Female'];
         $nations = ['Ghanaian'];
-        $licCat = ['A', 'B', 'C', 'D', 'E', 'F'];
+        $licCat = ['A', 'B', 'C', 'D', 'E', 'F',' '];
 
         return view('employee.edit')->with([
             'genders' => $genders,

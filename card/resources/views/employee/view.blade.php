@@ -8,15 +8,12 @@
             <h1 class="mt-4 ">View Driving Instructor
                 <img src="{{asset('img/logo/dvla-logo.jpeg')}}" alt="dvla logo" style="width:120px;height:120px; margin-left: 400px" />
             </h1>
-
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                 <li class="breadcrumb-item active">View Driving Instructor</li>
             </ol>
-
             <div class="card mb-4">
                 <div class="card-body">
-
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="card shadow mb-4">
@@ -35,7 +32,6 @@
                                     <a href="{{route('employee.pdf',$employee->id)}}" class="btn btn-danger pdf-view"><span class="fa fa-file-pdf"></span> Download PDF</a>
                                 </div>
                                 <!-- Card Body -->
-
                                 <p class="mb-4"></p>
                                 <div class="card-body">
                                     <div class="table-responsive">

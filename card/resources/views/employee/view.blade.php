@@ -96,7 +96,7 @@
                                                     <td colspan="4">
                                                         <strong>Driver's License No: </strong> #{{$employee->license->app_no}}
                                                         <br><br>
-                                                        <strong>Category :</strong> {{$employee->license->lic_cat}}
+                                                        <strong>Category :</strong> {{$employee->license->lic_cat_1.''.$employee->license->lic_cat_2.''.$employee->license->lic_cat_3}}
                                                         <br><br>
                                                         <strong>C of C / Reference Number: </strong> {{ join('/', str_split($employee->license->cert_no,2) )}}
                                                     </td>

@@ -78,7 +78,7 @@ class EmployeeController extends Controller
             'genders' => $genders,
             'nations' => $nations,
             'employee' => $employee,
-            'licCat' => $licCat
+            'licCat' => $licCat,
         ]);
     }
 
@@ -157,6 +157,10 @@ class EmployeeController extends Controller
         $employee->birth_date = $request->input('birth_date');
         $employee->nationality = $request->input('nationality') ?? 'Ghanaian';
         //License info
+
+        $employee->license->lic_cat_1 = $request->input('lic_cat_1');
+        $employee->license->lic_cat_2 = $request->input('lic_cat_2');
+        $employee->license->lic_cat_3 = $request->input('lic_cat_3');
         $employee->license->cert_no = $request->input('cert_no');
         $employee->license->issued_date = $request->input('issued_date');
         $employee->license->expiry_date = $request->input('expiry_date');
@@ -190,7 +194,7 @@ class EmployeeController extends Controller
                 'contact_number' => 'required',
                 'id_number' => 'required',
                 'app_no' => 'required',
-                'lic_cat' => 'required',
+                'lic_cat_1' => 'required',
             ]);
 
             if ($request->has('profile_image')) {
@@ -216,7 +220,9 @@ class EmployeeController extends Controller
                 'issued_date' => $request->input('issued_date'),
                 'expiry_date' => $request->input('expiry_date'),
                 'app_no' => $request->input('app_no'),
-                'lic_cat' => $request->input('lic_cat'),
+                'lic_cat_1' => $request->input('lic_cat'),
+                'lic_cat_2' => $request->input('lic_cat'),
+                'lic_cat_3' => $request->input('lic_cat'),
                 'reg_date' => $request->input('reg_date'),
             ]);
 

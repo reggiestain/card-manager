@@ -8,7 +8,7 @@
                 <img src="<?php echo e(asset('img/logo/dvla.jpeg')); ?>" alt="dvla logo" style="width:120px;height:120px; margin-left: 400px" />
             </h1>
             <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="<?php echo e(route('employee.index',$employee->institution_id)); ?>">Dashboard</a></li>
                 <li class="breadcrumb-item active">Edit Driving Instructor</li>
             </ol>
             <div class="card mb-4">
@@ -370,9 +370,10 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label class="control-label">License Category</label>
-                                                        <select class="form-control" id="selectCat" name="lic_cat" class="form-control <?php $__errorArgs = ['lic_cat'];
+                                                    <div class="row">
+                                                    <div class="form-group col-md-3">
+                                                        <label class="control-label">License Category 1</label>
+                                                        <select class="form-control" id="selectCat1" name="lic_cat_1" class="form-control <?php $__errorArgs = ['lic_cat_1'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -380,12 +381,12 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>">
-                                                            <option value="<?php echo e($employee->license->lic_cat); ?>" disabled selected><?php echo e($employee->license->lic_cat ?? 'Select Category'); ?></option>
+                                                            <option value="<?php echo e($employee->license->lic_cat_1); ?>" disabled selected><?php echo e($employee->license->lic_cat_1 ?? 'Select Category'); ?></option>
                                                             <?php $__currentLoopData = $licCat; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                             <option value="<?php echo e($cat); ?>"><?php echo e($cat); ?></option>
                                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                         </select>
-                                                        <?php $__errorArgs = ['lic_cat'];
+                                                        <?php $__errorArgs = ['lic_cat_1'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -397,6 +398,64 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+                                                    </div>
+                                                    <div class="form-group col-md-3">
+                                                        <label class="control-label">License Category 2</label>
+                                                        <select class="form-control" id="selectCat2" name="lic_cat_2" class="form-control <?php $__errorArgs = ['lic_cat_2'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>">
+                                                            <option value="<?php if($employee->license->lic_cat_2): ?><?php echo e($employee->license->lic_cat_2); ?> <?php else: ?> 'null' <?php endif; ?>"
+                                                                disabled selected><?php echo e($employee->license->lic_cat_2 ?? 'Select Category'); ?></option>
+                                                            <?php $__currentLoopData = $licCat; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <option value="<?php echo e($cat); ?>"><?php echo e($cat); ?></option>
+                                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                        </select>
+                                                        <?php $__errorArgs = ['lic_cat_2'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong><?php echo e($message); ?></strong>
+                                                        </span>
+                                                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">License Category 3</label>
+                                                        <select class="form-control" id="selectCat3" name="lic_cat_3" class="form-control <?php $__errorArgs = ['lic_cat'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>">
+                                                            <option value="<?php echo e($employee->license->lic_cat_3); ?>" disabled selected><?php echo e($employee->license->lic_cat_3 ?? 'Select Category'); ?></option>
+                                                            <?php $__currentLoopData = $licCat; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <option value="<?php echo e($cat); ?>"><?php echo e($cat); ?></option>
+                                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                        </select>
+                                                        <?php $__errorArgs = ['lic_cat_3'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong><?php echo e($message); ?></strong>
+                                                        </span>
+                                                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                                    </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="control-label">C of C / Reference Number</label>

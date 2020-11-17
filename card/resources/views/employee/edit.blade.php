@@ -231,19 +231,50 @@
                                                         </span>
                                                         @enderror
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label class="control-label">License Category</label>
-                                                        <select class="form-control" id="selectCat" name="lic_cat" class="form-control @error('lic_cat') is-invalid @enderror">
-                                                            <option value="{{ $employee->license->lic_cat}}" disabled selected>{{ $employee->license->lic_cat ?? 'Select Category'}}</option>
+                                                    <div class="row">
+                                                    <div class="form-group col-md-3">
+                                                        <label class="control-label">License Category 1</label>
+                                                        <select class="form-control" id="selectCat1" name="lic_cat_1" class="form-control @error('lic_cat_1') is-invalid @enderror">
+                                                            <option value="{{ $employee->license->lic_cat_1}}" disabled selected>{{ $employee->license->lic_cat_1 ?? 'Select Category'}}</option>
                                                             @foreach($licCat as $cat)
                                                             <option value="{{$cat}}">{{$cat}}</option>
                                                             @endforeach
                                                         </select>
-                                                        @error('lic_cat')
+                                                        @error('lic_cat_1')
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $message }}</strong>
                                                         </span>
                                                         @enderror
+                                                    </div>
+                                                    <div class="form-group col-md-3">
+                                                        <label class="control-label">License Category 2</label>
+                                                        <select class="form-control" id="selectCat2" name="lic_cat_2" class="form-control @error('lic_cat_2') is-invalid @enderror">
+                                                            <option value="@if($employee->license->lic_cat_2){{$employee->license->lic_cat_2}} @else 'null' @endif"
+                                                                disabled selected>{{ $employee->license->lic_cat_2 ?? 'Select Category'}}</option>
+                                                            @foreach($licCat as $cat)
+                                                            <option value="{{$cat}}">{{$cat}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                        @error('lic_cat_2')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">License Category 3</label>
+                                                        <select class="form-control" id="selectCat3" name="lic_cat_3" class="form-control @error('lic_cat') is-invalid @enderror">
+                                                            <option value="{{ $employee->license->lic_cat_3}}" disabled selected>{{ $employee->license->lic_cat_3 ?? 'Select Category'}}</option>
+                                                            @foreach($licCat as $cat)
+                                                            <option value="{{$cat}}">{{$cat}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                        @error('lic_cat_3')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="control-label">C of C / Reference Number</label>

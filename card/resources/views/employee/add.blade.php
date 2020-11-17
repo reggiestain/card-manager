@@ -219,9 +219,10 @@
                                                     <div class="panel-heading">
                                                         <h3 class="panel-title">License Details</h3>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label class="control-label">License Category</label>
-                                                        <select class="form-control" id="selectCat" name="lic_cat" class="form-control @error('lic_cat') is-invalid @enderror" value="{{ old('lic_cat') }}" autocomplete="lic_cat">
+                                                    <div class="row">
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">License Category 1</label>
+                                                        <select class="form-control" id="selectCat" name="lic_cat_1" class="form-control @error('lic_cat') is-invalid @enderror" value="{{ old('lic_cat') }}" autocomplete="lic_cat">
                                                             <option value="Female" disabled selected>Please select category</option>
                                                             @foreach($licCat as $cat)
                                                             <option value="{{$cat}}">{{$cat}}</option>
@@ -232,6 +233,35 @@
                                                             <strong>{{ $message }}</strong>
                                                         </span>
                                                         @enderror
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">License Category 2</label>
+                                                        <select class="form-control" id="selectCat" name="lic_cat_2" class="form-control @error('lic_cat') is-invalid @enderror" value="{{ old('lic_cat') }}" autocomplete="lic_cat">
+                                                            <option value="Female" disabled selected>Please select category</option>
+                                                            @foreach($licCat as $cat)
+                                                            <option value="{{$cat}}">{{$cat}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                        @error('gender')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label class="control-label">License Category 3</label>
+                                                        <select class="form-control" id="selectCat" name="lic_cat_3" class="form-control @error('lic_cat') is-invalid @enderror" value="{{ old('lic_cat') }}" autocomplete="lic_cat">
+                                                            <option value="Female" disabled selected>Please select category</option>
+                                                            @foreach($licCat as $cat)
+                                                            <option value="{{$cat}}">{{$cat}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                        @error('gender')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label class="control-label">C of C / Reference Number</label>

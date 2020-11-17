@@ -103,7 +103,7 @@
                                                         <strong>Driver's License No: </strong> #<?php echo e($employee->license->app_no); ?>
 
                                                         <br><br>
-                                                        <strong>Category :</strong> <?php echo e($employee->license->lic_cat); ?>
+                                                        <strong>Category :</strong> <?php echo e($employee->license->lic_cat_1.''.$employee->license->lic_cat_2.''.$employee->license->lic_cat_3); ?>
 
                                                         <br><br>
                                                         <strong>C of C / Reference Number: </strong> <?php echo e(join('/', str_split($employee->license->cert_no,2) )); ?>

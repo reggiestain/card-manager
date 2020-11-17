@@ -250,7 +250,7 @@
                                                     <div class="form-group col-md-3">
                                                         <label class="control-label">License Category 2</label>
                                                         <select class="form-control" id="selectCat2" name="lic_cat_2" class="form-control @error('lic_cat_2') is-invalid @enderror">
-                                                            <option value="@if($employee->license->lic_cat_2){{$employee->license->lic_cat_2}} @else 'null' @endif"
+                                                            <option value="@if($employee->license->lic_cat_2){{$employee->license->lic_cat_2}} @else @endif"
                                                                selected>{{ $employee->license->lic_cat_2 ?? 'Select Category'}}</option>
                                                             @foreach($licCat as $cat)
                                                             <option value="{{$cat}}">{{$cat}}</option>

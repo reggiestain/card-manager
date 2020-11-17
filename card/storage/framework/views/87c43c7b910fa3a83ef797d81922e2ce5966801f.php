@@ -4,17 +4,14 @@
     <main>
         <div class="container-fluid">
             <h1 class="mt-4 ">View Driving Instructor
-                <img src="<?php echo e(asset("img/logo/dvla.jpeg")); ?>" alt="dvla logo" style="width:120px;height:120px; margin-left: 400px" />
+                <img src="<?php echo e(asset('img/logo/dvla-logo.jpeg')); ?>" alt="dvla logo" style="width:120px;height:120px; margin-left: 400px" />
             </h1>
-
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
                 <li class="breadcrumb-item active">View Driving Instructor</li>
             </ol>
-
             <div class="card mb-4">
                 <div class="card-body">
-
                     <div class='row'>
                         <div class="col-md-12">
                             <div class="card shadow mb-4">
@@ -30,10 +27,10 @@
                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#adduserModal">Add user</a>
                                 </div>-->
                                     </div>
+                                    <a href="<?php echo e(route('employee.edit',$employee->id)); ?>" class="btn btn-primary">Edit <span class="fa fa-edit"></span></a>
                                     <a href="<?php echo e(route('employee.pdf',$employee->id)); ?>" class="btn btn-danger pdf-view"><span class="fa fa-file-pdf"></span> Download PDF</a>
                                 </div>
                                 <!-- Card Body -->
-
                                 <p class="mb-4"></p>
                                 <div class="card-body">
                                     <div class="table-responsive">

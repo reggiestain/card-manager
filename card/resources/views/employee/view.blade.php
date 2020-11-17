@@ -29,6 +29,7 @@
                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#adduserModal">Add user</a>
                                 </div>-->
                                     </div>
+                                    <a href="{{route('employee.edit',$employee->id)}}" class="btn btn-primary">Edit <span class="fa fa-edit"></span></a>
                                     <a href="{{route('employee.pdf',$employee->id)}}" class="btn btn-danger pdf-view"><span class="fa fa-file-pdf"></span> Download PDF</a>
                                 </div>
                                 <!-- Card Body -->

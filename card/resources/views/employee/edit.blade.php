@@ -86,8 +86,8 @@
                                                                     </span>
                                                                     @enderror
                                                                 </div>
-                                                                <div class="form-group">
-                                                                    <label class="control-label">ID Number</label>
+                                                               <div class="form-group">
+                                                                    <label class="control-label">Certificate No:</label>
                                                                     <input type="text" name="id_number" class="form-control @error('id_number') is-invalid @enderror" value="{{ $employee->id_number }}" />
                                                                     @error('id_number')
                                                                     <span class="invalid-feedback" role="alert">

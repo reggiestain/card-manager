@@ -19,7 +19,7 @@
                                                         <br>
                                                         <strong>Name</strong> {{$employee->name}}
                                                         <br><br>
-                                                        <strong>ID No:</strong> {{$employee->id_number}}
+                                                        <strong>Certificate No:</strong> {{$employee->id_number}}
                                                         <br><br>
                                                         <strong>Email:</strong> {{$employee->email}}
                                                         <br><br>

@@ -87,13 +87,13 @@
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label class="control-label">Certificate No:</label>
-                                                                    <input type="text" name="id_number" class="form-control @error('id_number') is-invalid @enderror" placeholder="Enter ID number" value="{{ old('id_number') }}" autocomplete="id_number" />
+                                                                    <input type="text" name="id_number" class="form-control @error('id_number') is-invalid @enderror" placeholder="Enter Certificate No" value="{{ old('id_number') }}" autocomplete="id_number" />
                                                                     @error('id_number')
                                                                     <span class="invalid-feedback" role="alert">
                                                                         <strong>{{ $message }}</strong>
                                                                     </span>
                                                                     @enderror
-                                                                </div>-->
+                                                                </div>
                                                                 <div class="form-group">
                                                                     <label class="control-label">Mobile</label>
                                                                     <input type="text" name="mobile" class="form-control @error('mobile') is-invalid @enderror" placeholder="Enter Contact Number" value="{{ old('mobile') }}" autocomplete="mobile" />

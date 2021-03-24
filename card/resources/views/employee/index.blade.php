@@ -56,6 +56,9 @@
                                             <td>{{$employee->mobile}}</td>
                                             <td>{{$employee->created_at}}</td>
                                             <td>
+                                            @if ($employee->status == 'for-print')
+                                            <a href="#" class="btn-warning btn-sm"><li class="fa fa-print"></li></a>
+                                            @endif
                                                 <a href="{{route('employee.view',$employee->id)}}" id="pdf-view" class="btn-success btn-sm">View</a>
                                                 <a href="{{route('employee.edit',$employee->id)}}" class="btn-info btn-sm">Edit</a>
                                                 <a href="#" class="btn-danger btn-sm">Delete</a>

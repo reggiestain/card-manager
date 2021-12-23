@@ -47,7 +47,7 @@
                                                     </div>
                                                     <div class="stepwizard-step col-xs-3">
                                                         <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
-                                                        <p><small>License Details</small></p>
+                                                        <p><small>Certificate Details</small></p>
                                                     </div>
                                                     <div class="stepwizard-step col-xs-3">
                                                         <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
@@ -282,7 +282,7 @@
                                                         @enderror
                                                     </div>
                                                     <div class='form-group'>
-                                                        <label class="control-label">License Issue Date</label>
+                                                        <label class="control-label">Issue Date</label>
                                                         <div class="form-group">
                                                             <div class='input-group date' id='datetimepicker2'>
                                                                 <input type='text' name="issued_date" class="form-control @error('issued_date') is-invalid @enderror" value="{{ old('issued_date') }}" autocomplete="issued_date" />
@@ -299,7 +299,7 @@
                                                     </div>
                                                     <div class="row">
                                                     <div class='form-group col-md-6'>
-                                                        <label class="control-label">License Expiry Date</label>
+                                                        <label class="control-label">Expiry Date</label>
                                                         <div class="form-group">
                                                             <div class='input-group date' id='datetimepicker1'>
                                                                 <input type='text' name="expiry_date" class="form-control @error('expiry_date') is-invalid @enderror" value="{{ old('expiry_date') }}" autocomplete="expiry_date" />

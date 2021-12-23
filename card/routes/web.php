@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('auth.login');
 });
-exit();
+
 Auth::routes();
 //report
 //Route::get('/','Reports@agePerFarmer');

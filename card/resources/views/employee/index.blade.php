@@ -41,7 +41,7 @@
                                             <th>Gender</th>
                                             <th>Email</th>
                                             <th>Contact Number</th>
-                                            <th>Created</th>
+                                            <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -54,7 +54,7 @@
                                             <td>{{$employee->gender}}</td>
                                             <td>{{$employee->email}}</td>
                                             <td>{{$employee->mobile}}</td>
-                                            <td>{{$employee->created_at}}</td>
+                                            <td>{{$employee->status}}</td>
                                             <td>
                                             @if ($employee->status == 'for-print')
                                             <a href="#" class="btn-warning btn-sm"><li class="fa fa-print"></li></a>

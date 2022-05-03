@@ -1,0 +1,1 @@
+<img src="{{ asset('img/suspended.png') }}" style="margin:100px" />
